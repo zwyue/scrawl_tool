@@ -143,5 +143,5 @@ class SpokenAndWritten(object):
             fo.close()
         
 if __name__ == '__main__':
-    # SpokenAndWritten().list_page(time.strftime("%Y-%m-%d"))
-    SpokenAndWritten().list_page('2019-01-01')
+    SpokenAndWritten().list_page(time.strftime("%Y-%m-%d"))
+    # SpokenAndWritten().list_page('2019-01-01')
