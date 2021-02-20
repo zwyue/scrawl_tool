@@ -122,7 +122,7 @@ class SVC:
             self.logger.info("...... 写入文件 ......")
             self.logger.info(famous_saying)
             fo = open("doc/famous_saying.txt","a",encoding='utf-8')
-            fo.write( famous_saying + '\n')
+            fo.write( '\n' + famous_saying + '\n')
         except Exception :
             self.logger.error("...... 文件写入失败 ......")
         finally :
