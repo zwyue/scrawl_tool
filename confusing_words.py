@@ -10,8 +10,8 @@ import pytesseract
 from PIL import Image
 import urllib.request
 import io
-import logging
 import os.path
+import init_log
 
 class SpokenAndWritten(object):
     head = {
@@ -24,60 +24,44 @@ class SpokenAndWritten(object):
         "X-Requested-With": "XMLHttpRequest",
         "Connection": "keep-alive"
     }
-    url = "https://www.tjxz.cc/tag/te-words"
+    # url = "https://www.tjxz.cc/tag/te-words"
 
     # 创建一个logger
-    logger = logging.getLogger()
+    logger = init_log.logger
 
     def __init__(self):
         self.sess = requests.session()
-        self.init_log()
+        init_log.init(self)
 
-    def init_log(self):
-        # Log等级总开关
-        self.logger.setLevel(logging.INFO)  
-        # 第二步，创建一个handler，用于写入日志文件
-        rq = time.strftime('%Y%m%d%H%M', time.localtime(time.time()))
-        log_path = '.\\Logs\\'
-        log_name = log_path + rq + '.log'
-        logfile = log_name
-        fh = logging.FileHandler(logfile, mode='w', encoding="UTF-8")
-        # 输出到file的log等级的开关
-        fh.setLevel(logging.INFO)  
-        # 第三步，定义handler的输出格式
-        formatter = logging.Formatter("%(asctime)s - %(filename)s[line:%(lineno)d] - %(levelname)s: %(message)s")
-        fh.setFormatter(formatter)
-        # 第四步，将logger添加到handler里面
-        self.logger.addHandler(fh)
-
-        # # 日志打印到屏幕上
-        ch = logging.StreamHandler()
-        ch.setLevel(logging.INFO)
-        self.logger.addHandler(ch)
-
-    def list_page(self,day_limit):
+    def list_page(self,day_limit,url,save_path,start_page):
 
         is_continue= True 
 
-        page = 1 
-
         while(is_continue) :
-            self.logger.info(f"...... 第 {page} 页 ......")
+            self.logger.info(f"...... 第 {start_page} 页 ......")
 
-            if page == 1 :
-                res = requests.get(self.url, params=None, headers=self.head, timeout=(10, 20))
+            if start_page == 1 :
+                res = requests.get(url, params=None, headers=self.head, timeout=(10, 20))
             else :
-                res = requests.get(self.url+'/page/'+str(page), headers=self.head, timeout=(10, 20))
+                res = requests.get(url+'/page/'+str(start_page), headers=self.head, timeout=(10, 20))
 
             html = etree.HTML(res.text)
 
-            if page == 1 :
-                result_page = html.xpath("//*[@class='page-numbers']/text()")
-                if result_page == None :
-                    return
-                else :
-                    pageNum = int(result_page[-1])
-                self.logger.info(f"...... 获取分页 页数 : {pageNum} ")
+
+            result_page = html.xpath("//*[@class='page-numbers']/text()")
+            last_page = 1
+            if result_page == None :
+                return
+            else :
+                last_page = int(result_page[-1])
+                
+            if start_page > 1 :
+                curent_page = html.xpath("//*[@class='page-numbers current']/text()")
+                if int(curent_page[0]) > last_page :
+                    last_page = int(curent_page[0])
+
+            pageNum = last_page
+            self.logger.info(f"...... 获取分页 页数 : {pageNum} ")
 
 
             results = html.xpath('//h3[contains(@class,"entry-title mh-loop-title")]//a/@href')
@@ -87,13 +71,13 @@ class SpokenAndWritten(object):
             is_continue = latest >= datetime.strptime(day_limit, "%Y-%m-%d") 
 
             for result in results:
-                self.detail_page(result)
+                self.detail_page(result,save_path)
 
             if(is_continue) :
                 page = page + 1
                 is_continue = page <= pageNum
             
-    def detail_page(self, detail_url):
+    def detail_page(self, detail_url,save_path):
         self.logger.info("...... 详情页面 ......")
         res = requests.get(detail_url, headers=self.head, timeout=(10, 20))
         soup = BeautifulSoup(res.text, 'lxml')
@@ -135,7 +119,7 @@ class SpokenAndWritten(object):
 
         try :
             self.logger.info("...... 写入文件 ......")
-            fo = open("doc/"+title+".txt","w",encoding='utf-8')
+            fo = open(save_path + title+".txt","w",encoding='utf-8')
             fo.write( article + '\n')
         except Exception :
             self.logger.error("...... 文件写入失败 ......")
@@ -143,5 +127,8 @@ class SpokenAndWritten(object):
             fo.close()
         
 if __name__ == '__main__':
-    SpokenAndWritten().list_page(time.strftime("%Y-%m-%d"))
+    sw = SpokenAndWritten() 
+    # sw.list_page(time.strftime("%Y-%m-%d"),"https://www.tjxz.cc/tag/te-words","doc/words_detail/")
+    # sw.list_page(time.strftime("%Y-%m-%d"),"https://www.tjxz.cc/tag/synonyms","doc/words_detail/")
+    sw.list_page('2018-01-01',"https://www.tjxz.cc/tag/synonyms","doc/words_distinguish/",1)
     # SpokenAndWritten().list_page('2019-01-01')
