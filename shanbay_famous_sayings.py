@@ -129,4 +129,4 @@ class SVC:
             fo.close()
  
 if __name__ == '__main__':
-    SVC().crack( '1092478224@qq.com','Sb_123456')
+    SVC().crack( 'your_account','your_account_password')
