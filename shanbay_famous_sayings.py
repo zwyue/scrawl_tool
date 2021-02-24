@@ -116,7 +116,8 @@ class SVC:
         submit.click()
         self.logger.info('...... 登录成功 ......')
         time.sleep(2)
-        famous_saying = self.driver.find_element_by_id('quote').text
+        # famous_saying = self.driver.find_element_by_id('quote').text
+        famous_saying = self.driver.find_elements_by_class_name('span8')[0].text
 
         try :
             self.logger.info("...... 写入文件 ......")

@@ -24,7 +24,6 @@ class SpokenAndWritten(object):
         "X-Requested-With": "XMLHttpRequest",
         "Connection": "keep-alive"
     }
-    # url = "https://www.tjxz.cc/tag/te-words"
 
     # 创建一个logger
     logger = init_log.logger
@@ -33,7 +32,7 @@ class SpokenAndWritten(object):
         self.sess = requests.session()
         init_log.init(self)
 
-    def list_page(self,day_limit,url,save_path,start_page):
+    def list_page(self,day_limit,url,save_path,start_page,if_read_pic):
 
         is_continue= True 
 
@@ -71,13 +70,13 @@ class SpokenAndWritten(object):
             is_continue = latest >= datetime.strptime(day_limit, "%Y-%m-%d") 
 
             for result in results:
-                self.detail_page(result,save_path)
+                self.detail_page(result,save_path,if_read_pic)
 
             if(is_continue) :
-                page = page + 1
-                is_continue = page <= pageNum
+                start_page = start_page + 1
+                is_continue = start_page <= pageNum
             
-    def detail_page(self, detail_url,save_path):
+    def detail_page(self, detail_url,save_path,if_read_pic):
         self.logger.info("...... 详情页面 ......")
         res = requests.get(detail_url, headers=self.head, timeout=(10, 20))
         soup = BeautifulSoup(res.text, 'lxml')
@@ -90,33 +89,34 @@ class SpokenAndWritten(object):
 
         img_text_chi = ''
 
-        try :
-            text_img = soup.find('strong',text='影视用例').parent.find_next_siblings()[0].next.get('src')
+        article = strongs.text
+        if if_read_pic :
+            try :
+                text_img = soup.find('strong',text='影视用例').parent.find_next_siblings()[0].next.get('src')
 
-            self.logger.info(f"...... 获取文章影视用例图片 地址 {text_img}......")
+                self.logger.info(f"...... 获取文章影视用例图片 地址 {text_img}......")
 
-            url_img = urllib.request.urlopen(text_img)
-            temp_img = io.BytesIO(url_img.read())
-            image = Image.open(temp_img)
+                url_img = urllib.request.urlopen(text_img)
+                temp_img = io.BytesIO(url_img.read())
+                image = Image.open(temp_img)
 
-            img_text_chi_contain = pytesseract.image_to_string(image, lang='chi_sim')
-            img_text_eng = pytesseract.image_to_string(image)
+                img_text_chi_contain = pytesseract.image_to_string(image, lang='chi_sim')
+                img_text_eng = pytesseract.image_to_string(image)
 
-            for chi in img_text_chi_contain :
-                if u'\u4e00' <= chi <= u'\u9fff':
-                    img_text_chi = img_text_chi + chi
+                for chi in img_text_chi_contain :
+                    if u'\u4e00' <= chi <= u'\u9fff':
+                        img_text_chi = img_text_chi + chi
 
-            img_text_eng = img_text_eng.rsplit('\n\x0c')[0].split('\n')[-1]
-        except Exception :
-            self.logger.error("...... 获取文章影视用例图片失败 ......")
+                img_text_eng = img_text_eng.rsplit('\n\x0c')[0].split('\n')[-1]
+            except Exception :
+                self.logger.error("...... 获取文章影视用例图片失败 ......")
+
+            if len(img_text_chi) == 0 :
+                self.logger.info("...... 未解析成功图片文字 ......")
+            else :
+                article_split = strongs.text.split('\n影视用例\n\n')
+                article = article_split[0] + '\n影视用例\n\n' + img_text_chi + '\n\n' + img_text_eng + '\n\n\x0c' + article_split[1]
             
-        if len(img_text_chi) == 0 :
-            self.logger.info("...... 未解析成功图片文字 ......")
-            article = strongs.text
-        else :
-            article_split = strongs.text.split('\n影视用例\n\n')
-            article = article_split[0] + '\n影视用例\n\n' + img_text_chi + '\n\n' + img_text_eng + '\n\n\x0c' + article_split[1]
-
         try :
             self.logger.info("...... 写入文件 ......")
             fo = open(save_path + title+".txt","w",encoding='utf-8')
@@ -128,7 +128,8 @@ class SpokenAndWritten(object):
         
 if __name__ == '__main__':
     sw = SpokenAndWritten() 
-    # sw.list_page(time.strftime("%Y-%m-%d"),"https://www.tjxz.cc/tag/te-words","doc/words_detail/")
-    # sw.list_page(time.strftime("%Y-%m-%d"),"https://www.tjxz.cc/tag/synonyms","doc/words_detail/")
-    sw.list_page('2018-01-01',"https://www.tjxz.cc/tag/synonyms","doc/words_distinguish/",1)
+    sw.list_page(time.strftime("%Y-%m-%d"),"https://www.tjxz.cc/tag/te-words","doc/words_detail/",1,True)
+    sw.list_page(time.strftime("%Y-%m-%d"),"https://www.tjxz.cc/tag/synonyms","doc/words_distinguish/",1,False)
+    sw.list_page(time.strftime("%Y-%m-%d"),"https://www.tjxz.cc/tag/speech","doc/speech/",1,False)
+    # sw.list_page('2018-01-01',"https://www.tjxz.cc/tag/synonyms","doc/words_distinguish/",1)
     # SpokenAndWritten().list_page('2019-01-01')
