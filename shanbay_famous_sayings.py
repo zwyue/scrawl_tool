@@ -88,24 +88,28 @@ class SVC:
         self.open(account,password)
 
         #滚动标签ID
-        slideblock = self.driver.find_element_by_id('nc_1_n1z') 
+        # slideblock = self.driver.find_element_by_id('nc-lang-cnt') 
 
-        track = self.get_track(268)
-        self.logger.info(f'...... 滑动轨迹 {track} ......')
-        self.move_to_gap(slideblock, track)
+        # track = self.get_track(268)
+        # self.logger.info(f'...... 滑动轨迹 {track} ......')
+        # self.move_to_gap(slideblock, track)
 
         success = False
-        try:
-            success = self.driverwait.until(EC.text_to_be_present_in_element((By.CLASS_NAME, 'nc-lang-cnt'), '验证通过'))
-        except:
-            self.logger.error('失败')
-        # 失败后重试
-        if not success:
-            time.sleep(0.1)
-            self.crack(account,password)
-        else:
-            self.logger.info('成功')
-            self.login()
+        # try:
+        #     success = self.driverwait.until(EC.text_to_be_present_in_element((By.CLASS_NAME, 'nc-lang-cnt'), '验证通过'))
+        # except:
+        #     self.logger.error('失败')
+        # # 失败后重试
+        # if not success:
+        #     time.sleep(0.1)
+        #     self.crack(account,password)
+        # else:
+        #     self.logger.info('成功')
+        #     self.login()
+        submit = self.driverwait.until(EC.element_to_be_clickable((By.ID, 'button-login')))
+        submit.click()
+        self.logger.info('...... 登录成功 ......')
+        self.login()
  
     def login(self):
         """
@@ -116,8 +120,8 @@ class SVC:
         submit.click()
         self.logger.info('...... 登录成功 ......')
         time.sleep(2)
-        # famous_saying = self.driver.find_element_by_id('quote').text
-        famous_saying = self.driver.find_elements_by_class_name('span8')[0].text
+        famous_saying = self.driver.find_element_by_id('quote').text
+        # famous_saying = self.driver.find_elements_by_class_name('span8')[0].text
 
         try :
             self.logger.info("...... 写入文件 ......")
@@ -130,4 +134,4 @@ class SVC:
             fo.close()
  
 if __name__ == '__main__':
-    SVC().crack( 'your_account','your_account_password')
+    SVC().crack( 'your_account','passwprd')
