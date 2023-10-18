@@ -22,6 +22,8 @@ class SVC:
         option.add_argument("--disable-blink-features")
         option.add_argument("--disable-blink-features=AutomationControlled")
         self.driver = webdriver.Chrome(chrome_options=option)
+
+        # self.driver = webdriver.Chrome(options=option)
         # self.driver.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {
         # "source": """
         #     Object.defineProperty(navigator, 'webdriver', {
@@ -121,6 +123,10 @@ class SVC:
         self.logger.info('...... 登录成功 ......')
         time.sleep(2)
         famous_saying = self.driver.find_element_by_id('quote').text
+
+        # famous_saying = self.driver.find_element('quote')
+        # print(famous_saying)
+        # famous_saying = self.driver.find_element('quote').text
         # famous_saying = self.driver.find_elements_by_class_name('span8')[0].text
 
         try :
