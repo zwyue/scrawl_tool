@@ -46,10 +46,8 @@ class SpokenAndWritten(object):
 
             html = etree.HTML(res.text)
 
-
             result_page = html.xpath("//*[@class='page-numbers']/text()")
-            last_page = 1
-            if result_page == None :
+            if result_page == None or result_page==[]:
                 return
             else :
                 last_page = int(result_page[-1])
@@ -116,10 +114,10 @@ class SpokenAndWritten(object):
             else :
                 article_split = strongs.text.split('\n影视用例\n\n')
                 article = article_split[0] + '\n影视用例\n\n' + img_text_chi + '\n\n' + img_text_eng + '\n\n\x0c' + article_split[1]
-            
+
+        self.logger.info("...... 写入文件 ......")
+        fo = open(save_path + title + ".txt", "w", encoding='utf-8')
         try :
-            self.logger.info("...... 写入文件 ......")
-            fo = open(save_path + title+".txt","w",encoding='utf-8')
             fo.write( article + '\n')
         except Exception :
             self.logger.error("...... 文件写入失败 ......")
@@ -128,8 +126,8 @@ class SpokenAndWritten(object):
         
 if __name__ == '__main__':
     sw = SpokenAndWritten() 
-    sw.list_page(time.strftime("%Y-%m-%d"),"https://www.tjxz.cc/tag/detailed-explanation-of-words","doc/words_detail/",1,True)
-    sw.list_page(time.strftime("%Y-%m-%d"),"https://www.tjxz.cc/tag/synonyms","doc/words_distinguish/",1,False)
-    sw.list_page(time.strftime("%Y-%m-%d"),"https://www.tjxz.cc/tag/speech","doc/speech/",1,False)
+    sw.list_page(time.strftime("%Y-%m-%d"),"https://www.tjxz.cc/tag/te-words","doc/words_detail/",1,True)
+    # sw.list_page(time.strftime("%Y-%m-%d"),"https://www.tjxz.cc/tag/synonyms","doc/words_distinguish/",1,False)
+    # sw.list_page(time.strftime("%Y-%m-%d"),"https://www.tjxz.cc/tag/speech","doc/speech/",1,False)
     # sw.list_page('2018-01-01',"https://www.tjxz.cc/tag/synonyms","doc/words_distinguish/",1)
     # SpokenAndWritten().list_page('2019-01-01')

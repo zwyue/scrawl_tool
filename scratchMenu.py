@@ -16,17 +16,17 @@ class Menu(object):
         resultText = res.text
         jsonResult = json.loads(resultText)
         dishList = jsonResult.get('Data').get('DishList')
-        dishName = []
 
-        for dish in dishList : 
+        for dish in dishList :
+            fo = open("doc/menu.txt", "a", encoding='utf-8')
             try :
-                fo = open("C:\\Users\\zwyli\\IdeaProjects\\html\\menu\\menu.txt","a",encoding='utf-8')
                 fo.write(dish.get('DishName')+"\n")
-                # fo.write("\'"+dish.get('DishName')+"\',\n")
             except Exception :
                 self.logger.error("...... 文件写入失败 ......")
             finally :
-                fo.close()       
+                fo.close()
+
+        self.logger.info("...... 写入结束 ......")
             
 if __name__ == '__main__':
     menu = Menu() 
