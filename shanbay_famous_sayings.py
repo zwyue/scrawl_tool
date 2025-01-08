@@ -96,29 +96,31 @@ class SVC:
         self.open(account, password)
 
         # 滚动标签ID
-        # slideblock = self.driver.find_element_by_id('nc-lang-cnt')
-
-        # track = self.get_track(268)
-        # self.logger.info(f'...... 滑动轨迹 {track} ......')
-        # self.move_to_gap(slideblock, track)
-
-        success = False
-        # try:
-        #     success = self.driverwait.until(EC.text_to_be_present_in_element((By.CLASS_NAME, 'nc-lang-cnt'), '验证通过'))
-        # except:
-        #     self.logger.error('失败')
-        # # 失败后重试
-        # if not success:
-        #     time.sleep(0.1)
-        #     self.crack(account,password)
-        # else:
-        #     self.logger.info('成功')
-        #     self.login()
-
-        submit = self.driverwait.until(EC.element_to_be_clickable((By.ID, 'button-login')))
-        submit.click()
-        self.logger.info('...... 开始登录 ......')
-        self.login()
+        slide_block = self.driver.find_elements(By.ID,'nc-lang-cnt')
+        if not slide_block:
+            submit = self.driverwait.until(EC.element_to_be_clickable((By.ID, 'button-login')))
+            submit.click()
+            self.logger.info('...... 开始登录 ......')
+            self.login()
+        else:
+            track = self.get_track(268)
+            self.logger.info(f'...... 滑动轨迹 {track} ......')
+            self.move_to_gap(slide_block, track)
+            success = False
+            try:
+                success = self.driverwait.until(
+                    EC.text_to_be_present_in_element((By.CLASS_NAME, 'nc-lang-cnt'), '验证通过'))
+            except:
+                self.logger.error('失败')
+            # 失败后重试
+            if not success:
+                # time.sleep(0.1)
+                # self.crack(account, password)
+                self.logger.info('...... 验证失败 ......')
+                return
+            else:
+                self.logger.info('成功')
+                self.login()
 
     def login(self):
         """

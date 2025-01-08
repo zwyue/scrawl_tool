@@ -20,8 +20,8 @@ soup = BeautifulSoup(res.text, 'lxml')
 
 contant_p = soup.findAll(attrs={"class" :"_1qeIAgB0cPwnLhDF9XSiJM"})
 
+fo = open("doc/speech/speech_dream.txt","a",encoding='utf-8')
 try :
-    fo = open("doc/speech/speech_dream.txt","a",encoding='utf-8')
     for contant in contant_p :
         fo.write( '\n' +contant.text + '\n' )
 except Exception :

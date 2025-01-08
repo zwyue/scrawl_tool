@@ -127,7 +127,7 @@ class SpokenAndWritten(object):
 if __name__ == '__main__':
     sw = SpokenAndWritten() 
     sw.list_page(time.strftime("%Y-%m-%d"),"https://www.tjxz.cc/tag/te-words","doc/words_detail/",1,True)
-    # sw.list_page(time.strftime("%Y-%m-%d"),"https://www.tjxz.cc/tag/synonyms","doc/words_distinguish/",1,False)
-    # sw.list_page(time.strftime("%Y-%m-%d"),"https://www.tjxz.cc/tag/speech","doc/speech/",1,False)
+    sw.list_page(time.strftime("%Y-%m-%d"),"https://www.tjxz.cc/tag/synonyms","doc/words_distinguish/",1,False)
+    sw.list_page(time.strftime("%Y-%m-%d"),"https://www.tjxz.cc/tag/speech","doc/speech/",1,False)
     # sw.list_page('2018-01-01',"https://www.tjxz.cc/tag/synonyms","doc/words_distinguish/",1)
     # SpokenAndWritten().list_page('2019-01-01')
