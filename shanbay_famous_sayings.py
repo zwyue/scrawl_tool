@@ -96,7 +96,7 @@ class SVC:
         self.open(account, password)
 
         # 滚动标签ID
-        slide_block = self.driver.find_elements(By.ID,'nc-lang-cnt')
+        slide_block = self.driver.find_elements(By.ID, 'nc-lang-cnt')
         if not slide_block:
             submit = self.driverwait.until(EC.element_to_be_clickable((By.ID, 'button-login')))
             submit.click()
@@ -136,18 +136,24 @@ class SVC:
             self.logger.info(Exception)
 
         self.logger.info('...... locate element ......')
-        famous_saying = self.driver.find_element(By.ID, 'quote').text
-        # famous_saying = self.driver.find_elements_by_class_name('span8')[0].text
-        self.logger.info("...... 写入文件 ......")
-        self.logger.info(famous_saying)
-        fo = open("doc/famous_saying.txt", "a", encoding='utf-8')
-        writeTime = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
-        try:
-            fo.write('\n' + famous_saying + '\n' + writeTime + '\n')
-        except Exception:
-            self.logger.error("...... 文件写入失败 ......")
-        finally:
-            fo.close()
+
+        n = 0
+        while n < 3:
+            n = n + 1
+            famous_saying = self.driver.find_element(By.ID, 'quote').text
+            if famous_saying:
+                n = 3
+                # famous_saying = self.driver.find_elements_by_class_name('span8')[0].text
+                self.logger.info("...... 写入文件 ......")
+                self.logger.info(famous_saying)
+                fo = open("doc/famous_saying.txt", "a", encoding='utf-8')
+                writeTime = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
+                try:
+                    fo.write('\n' + famous_saying + '\n' + writeTime + '\n')
+                except Exception:
+                    self.logger.error("...... 文件写入失败 ......")
+                finally:
+                    fo.close()
 
 
 if __name__ == '__main__':
