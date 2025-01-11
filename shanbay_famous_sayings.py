@@ -101,26 +101,27 @@ class SVC:
             submit = self.driverwait.until(EC.element_to_be_clickable((By.ID, 'button-login')))
             submit.click()
             self.logger.info('...... 开始登录 ......')
-            self.login()
-        else:
-            track = self.get_track(268)
-            self.logger.info(f'...... 滑动轨迹 {track} ......')
-            self.move_to_gap(slide_block, track)
-            success = False
             try:
-                success = self.driverwait.until(
-                    EC.text_to_be_present_in_element((By.CLASS_NAME, 'nc-lang-cnt'), '验证通过'))
-            except:
-                self.logger.error('失败')
-            # 失败后重试
-            if not success:
-                # time.sleep(0.1)
-                # self.crack(account, password)
-                self.logger.info('...... 验证失败 ......')
-                return
-            else:
-                self.logger.info('成功')
                 self.login()
+            except:
+                track = self.get_track(268)
+                self.logger.info(f'...... 滑动轨迹 {track} ......')
+                self.move_to_gap(slide_block, track)
+                success = False
+                try:
+                    success = self.driverwait.until(
+                        EC.text_to_be_present_in_element((By.CLASS_NAME, 'nc-lang-cnt'), '验证通过'))
+                except:
+                    self.logger.error('失败')
+                # 失败后重试
+                if not success:
+                    time.sleep(0.1)
+                    self.crack(account, password)
+                    self.logger.info('...... 验证失败 ......')
+                    return
+                else:
+                    self.logger.info('成功')
+                    self.login()
 
     def login(self):
         """
