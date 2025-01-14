@@ -135,6 +135,8 @@ class SVC:
             time.sleep(2)
         except Exception:
             self.logger.info(Exception)
+            raise Exception
+
 
         self.logger.info('...... locate element ......')
 
