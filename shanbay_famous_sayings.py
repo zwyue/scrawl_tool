@@ -115,9 +115,13 @@ class SVC:
                     self.logger.error('失败')
                 # 失败后重试
                 if not success:
-                    time.sleep(0.1)
-                    self.crack(account, password)
-                    self.logger.info('...... 验证失败 ......')
+                    error_msg = self.driver.find_elements(By.CLASS_NAME, 'error-msg')
+                    if error_msg:
+                        self.login()
+                    else:
+                        time.sleep(0.1)
+                        self.crack(account, password)
+                        self.logger.info('...... 验证失败 ......')
                     return
                 else:
                     self.logger.info('成功')
