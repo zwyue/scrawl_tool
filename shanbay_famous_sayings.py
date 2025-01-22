@@ -87,45 +87,57 @@ class SVC:
         time.sleep(0.5)
         ActionChains(self.driver).release().perform()
 
-    def crack(self, account=None, password=None):
+    def crack(self):
 
         with open("doc/account.json") as file:
-            data = json.load(file)
-            account = data['shanbay']['name']
-            password = data['shanbay']['password']
-        self.open(account, password)
+            try:
+                data = json.load(file)
+                account = data['shanbay']['name']
+                password = data['shanbay']['password']
+                self.open(account, password)
+            except:
+                self.logger.info('...... read account.json fail ......')
+            finally:
+                file.close()
 
         # 滚动标签ID
-        slide_block = self.driver.find_elements(By.ID, 'nc-lang-cnt')
-        if not slide_block:
+        slide_block_element = self.driver.find_elements(By.ID, 'nc-lang-cnt')
+        if not slide_block_element:
             submit = self.driverwait.until(EC.element_to_be_clickable((By.ID, 'button-login')))
             submit.click()
             self.logger.info('...... 开始登录 ......')
             try:
                 self.login()
             except:
-                track = self.get_track(268)
-                self.logger.info(f'...... 滑动轨迹 {track} ......')
-                self.move_to_gap(slide_block, track)
-                success = False
-                try:
-                    success = self.driverwait.until(
-                        EC.text_to_be_present_in_element((By.CLASS_NAME, 'nc-lang-cnt'), '验证通过'))
-                except:
-                    self.logger.error('失败')
-                # 失败后重试
-                if not success:
-                    error_msg = self.driver.find_elements(By.CLASS_NAME, 'error-msg')
-                    if error_msg:
-                        self.login()
-                    else:
-                        time.sleep(0.1)
-                        self.crack(account, password)
-                        self.logger.info('...... 验证失败 ......')
-                    return
-                else:
-                    self.logger.info('成功')
-                    self.login()
+                self.slide_block(slide_block_element)
+        else:
+            self.slide_block(slide_block_element)
+
+    def slide_block(self,block):
+        track = self.get_track(268)
+        self.logger.info(f'...... 滑动轨迹 {track} ......')
+        self.move_to_gap(block, track)
+        success = False
+        try:
+            success = self.driverwait.until(
+                EC.text_to_be_present_in_element((By.CLASS_NAME, 'nc-lang-cnt'), '验证通过'))
+        except:
+            self.logger.error('失败')
+
+        # 失败后重试
+        if not success:
+            error_msg = self.driver.find_elements(By.CLASS_NAME, 'error-msg')
+            if error_msg:
+                self.login()
+            else:
+                time.sleep(0.1)
+                self.crack()
+                self.logger.info('...... 验证失败 ......')
+            return
+        else:
+            self.logger.info('成功')
+            self.login()
+
 
     def login(self):
         """
@@ -141,26 +153,22 @@ class SVC:
             self.logger.info(Exception)
             raise Exception
 
-
         self.logger.info('...... locate element ......')
 
-        n = 0
-        while n < 3:
-            n = n + 1
-            famous_saying = self.driver.find_element(By.ID, 'quote').text
-            if famous_saying:
-                n = 3
-                # famous_saying = self.driver.find_elements_by_class_name('span8')[0].text
-                self.logger.info("...... 写入文件 ......")
-                self.logger.info(famous_saying)
-                fo = open("doc/famous_saying.txt", "a", encoding='utf-8')
-                writeTime = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
-                try:
-                    fo.write('\n' + famous_saying + '\n' + writeTime + '\n')
-                except Exception:
-                    self.logger.error("...... 文件写入失败 ......")
-                finally:
-                    fo.close()
+        famous_saying_element = self.driver.find_element(By.ID, 'quote')
+        if famous_saying_element:
+            famous_saying = famous_saying_element.text
+            self.logger.info("...... 写入文件 ......")
+            self.logger.info(famous_saying)
+            fo = open("doc/famous_saying.txt", "a", encoding='utf-8')
+            write_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
+            try:
+                fo.write('\n' + famous_saying + '\n' + write_time + '\n')
+            except Exception:
+                self.logger.error("...... 文件写入失败 ......")
+            finally:
+                fo.close()
+
 
 
 if __name__ == '__main__':
