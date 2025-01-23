@@ -1,15 +1,13 @@
+import json
 import time
-from io import BytesIO
-from xmlrpc.client import DateTime
 
 from selenium import webdriver
 from selenium.webdriver import ActionChains
 from selenium.webdriver.common.by import By
-from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+
 import init_log
-import time
-import json
 
 
 class SVC:
@@ -26,19 +24,13 @@ class SVC:
         option.add_argument("--disable-blink-features")
         option.add_argument("--disable-blink-features=AutomationControlled")
         self.driver = webdriver.Chrome(options=option)
-        # self.driver.execute_cdp_cmd("Page.addScriptToEvaluateOnNewDocument", {
-        # "source": """
-        #     Object.defineProperty(navigator, 'webdriver', {
-        #     get: () => undefined
-        #     })
-        # """
-        # })
-        # self.driver = webdriver.Chrome()
         self.driver.maximize_window()
-        self.driverwait = WebDriverWait(self.driver, 20)
+        self.driver_wait = WebDriverWait(self.driver, 20)
         self.location = {}
         self.size = {'width': 260, 'height': 160}
         self.BORDER = 40
+        self.account=None
+        self.password=None
 
     def __del__(self):
         self.driver.close()
@@ -49,12 +41,15 @@ class SVC:
         :return: None
         """
         self.driver.get(self.url)
-        account_container = self.driverwait.until(EC.presence_of_element_located((By.ID, 'input-account')))
-        password_container = self.driverwait.until(EC.presence_of_element_located((By.ID, 'input-password')))
+        account_container = self.driver_wait.until(EC.presence_of_element_located((By.ID, 'input-account')))
+        password_container = self.driver_wait.until(EC.presence_of_element_located((By.ID, 'input-password')))
         account_container.send_keys(account)
         password_container.send_keys(password)
+        self.account = account
+        self.password = password
 
-    def get_track(self, distance):
+    @staticmethod
+    def get_track(distance):
         """
         根据偏移量获取移动轨迹
         :param distance: 偏移量
@@ -81,45 +76,51 @@ class SVC:
         :param track: 轨迹
         :return:
         """
+        self.logger.info('...... start moving ......')
         ActionChains(self.driver).click_and_hold(slider).perform()
         for x in track:
             ActionChains(self.driver).move_by_offset(xoffset=x, yoffset=0).perform()
         time.sleep(0.5)
         ActionChains(self.driver).release().perform()
+        self.logger.info('...... finish moving ......')
 
-    def crack(self):
+    def set_account(self):
+        if self.account is None:
+            with open("doc/account.json") as file:
+                try:
+                    data = json.load(file)
+                    account = data['shanbay']['name']
+                    password = data['shanbay']['password']
+                    self.open(account, password)
+                except:
+                    self.logger.info('...... read account.json fail ......')
+                finally:
+                    file.close()
 
-        with open("doc/account.json") as file:
-            try:
-                data = json.load(file)
-                account = data['shanbay']['name']
-                password = data['shanbay']['password']
-                self.open(account, password)
-            except:
-                self.logger.info('...... read account.json fail ......')
-            finally:
-                file.close()
-
+    def crack(self,times):
+        self.set_account()
         # 滚动标签ID
-        slide_block_element = self.driver.find_elements(By.ID, 'nc-lang-cnt')
+        slide_block_element = self.driver.find_elements(By.CLASS_NAME, 'nc-lang-cnt')
+        is_login = False
         if not slide_block_element:
-            submit = self.driverwait.until(EC.element_to_be_clickable((By.ID, 'button-login')))
-            submit.click()
             self.logger.info('...... 开始登录 ......')
-            try:
-                self.login()
-            except:
-                self.slide_block(slide_block_element)
+            is_login = self.login()
+            if times<2:
+                self.crack(times+1)
         else:
-            self.slide_block(slide_block_element)
+            if self.slide_block(slide_block_element):
+                is_login = self.login()
+        if is_login:
+            self.write_txt()
 
-    def slide_block(self,block):
+
+    def slide_block(self, block):
         track = self.get_track(268)
         self.logger.info(f'...... 滑动轨迹 {track} ......')
         self.move_to_gap(block, track)
         success = False
         try:
-            success = self.driverwait.until(
+            success = self.driver_wait.until(
                 EC.text_to_be_present_in_element((By.CLASS_NAME, 'nc-lang-cnt'), '验证通过'))
         except:
             self.logger.error('失败')
@@ -128,15 +129,15 @@ class SVC:
         if not success:
             error_msg = self.driver.find_elements(By.CLASS_NAME, 'error-msg')
             if error_msg:
-                self.login()
+                """
+                重试
+                """
+                self.logger.error(error_msg)
+                return True
             else:
-                time.sleep(0.1)
-                self.crack()
-                self.logger.info('...... 验证失败 ......')
-            return
+                return False
         else:
-            self.logger.info('成功')
-            self.login()
+            return True
 
 
     def login(self):
@@ -145,16 +146,17 @@ class SVC:
         :return: None
         """
         try:
-            submit = self.driverwait.until(EC.element_to_be_clickable((By.ID, 'button-login')))
+            submit = self.driver_wait.until(EC.element_to_be_clickable((By.ID, 'button-login')))
             submit.click()
             self.logger.info('...... 登录成功 ......')
             time.sleep(2)
-        except Exception:
-            self.logger.info(Exception)
-            raise Exception
+            return True
+        except Exception as e:
+            self.logger.info(e)
+            return False
 
+    def write_txt(self):
         self.logger.info('...... locate element ......')
-
         famous_saying_element = self.driver.find_element(By.ID, 'quote')
         if famous_saying_element:
             famous_saying = famous_saying_element.text
@@ -169,7 +171,5 @@ class SVC:
             finally:
                 fo.close()
 
-
-
 if __name__ == '__main__':
-    SVC().crack()
+    SVC().crack(0)
