@@ -1,17 +1,14 @@
-from datetime import datetime, timedelta
-from urllib.parse import urljoin
+from datetime import datetime
 from bs4 import BeautifulSoup
 import time
-import json
-import platform
 import requests
 from lxml import etree
 import pytesseract
 from PIL import Image
 import urllib.request
 import io
-import os.path
-import init_log
+from log import init_log
+
 
 class SpokenAndWritten(object):
     head = {

@@ -1,5 +1,5 @@
 import requests
-import init_log
+from log import init_log
 import json
 
 

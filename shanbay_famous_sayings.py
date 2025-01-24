@@ -7,7 +7,7 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
-import init_log
+from log import init_log
 
 
 class SVC:
@@ -97,7 +97,7 @@ class SVC:
                 finally:
                     file.close()
 
-    def crack(self,times):
+    def crack(self):
         self.set_account()
         # 滚动标签ID
         slide_block_element = self.driver.find_elements(By.CLASS_NAME, 'nc-lang-cnt')
@@ -105,8 +105,6 @@ class SVC:
         if not slide_block_element:
             self.logger.info('...... 开始登录 ......')
             is_login = self.login()
-            if times<2:
-                self.crack(times+1)
         else:
             if self.slide_block(slide_block_element):
                 is_login = self.login()
@@ -148,9 +146,17 @@ class SVC:
         try:
             submit = self.driver_wait.until(EC.element_to_be_clickable((By.ID, 'button-login')))
             submit.click()
-            self.logger.info('...... 登录成功 ......')
-            time.sleep(2)
-            return True
+            self.logger.info('...... 登录成功 ......'+time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())))
+            time.sleep(5)
+            self.logger.info('...... 程序继续 ......'+time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())))
+
+            error_msg = self.driver.find_elements(By.CLASS_NAME, 'error-msg')
+            if error_msg:
+                self.logger.info(error_msg[0].text)
+                time.sleep(10)
+                return self.login()
+            else:
+                return True
         except Exception as e:
             self.logger.info(e)
             return False
@@ -172,4 +178,4 @@ class SVC:
                 fo.close()
 
 if __name__ == '__main__':
-    SVC().crack(0)
+    SVC().crack()
