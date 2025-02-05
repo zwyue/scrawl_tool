@@ -56,18 +56,18 @@ class SVC:
         :return: 移动轨迹
         """
         # 移动轨迹
-        list = []
+        track_list = []
         # 当前位移
 
         i = 0
 
         while i < distance / 134:
-            list.append(43)
-            list.append(42)
-            list.append(134 - 43 - 42)
+            track_list.append(43)
+            track_list.append(42)
+            track_list.append(134 - 43 - 42)
             i = i + 1
 
-        return list
+        return track_list
 
     def move_to_gap(self, slider, track):
         """
@@ -92,22 +92,20 @@ class SVC:
                     account = data['shanbay']['name']
                     password = data['shanbay']['password']
                     self.open(account, password)
-                except:
+                except Exception as e:
                     self.logger.info('...... read account.json fail ......')
+                    self.logger.info(e)
                 finally:
                     file.close()
 
     def crack(self):
-        self.set_account()
         # 滚动标签ID
         slide_block_element = self.driver.find_elements(By.CLASS_NAME, 'nc-lang-cnt')
-        is_login = False
-        if not slide_block_element:
-            self.logger.info('...... 开始登录 ......')
-            is_login = self.login()
+
+        if slide_block_element:
+            is_login = self.slide_block(slide_block_element)
         else:
-            if self.slide_block(slide_block_element):
-                is_login = self.login()
+            is_login = True
         if is_login:
             self.write_txt()
 
@@ -120,8 +118,8 @@ class SVC:
         try:
             success = self.driver_wait.until(
                 EC.text_to_be_present_in_element((By.CLASS_NAME, 'nc-lang-cnt'), '验证通过'))
-        except:
-            self.logger.error('失败')
+        except Exception as e:
+            self.logger.error(e)
 
         # 失败后重试
         if not success:
@@ -154,9 +152,8 @@ class SVC:
             if error_msg:
                 self.logger.info(error_msg[0].text)
                 time.sleep(10)
-                return self.login()
-            else:
-                return True
+                self.login()
+            return True
         except Exception as e:
             self.logger.info(e)
             return False
@@ -172,10 +169,14 @@ class SVC:
             write_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
             try:
                 fo.write('\n' + famous_saying + '\n' + write_time + '\n')
-            except Exception:
+            except Exception as e:
                 self.logger.error("...... 文件写入失败 ......")
+                self.logger.error(e)
             finally:
                 fo.close()
 
 if __name__ == '__main__':
-    SVC().crack()
+    self = SVC()
+    self.set_account()
+    self.login()
+    self.crack()
