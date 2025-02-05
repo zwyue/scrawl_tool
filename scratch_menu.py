@@ -13,16 +13,17 @@ class Menu(object):
 
     def menu(self,url):
         res = requests.get(url, params=None, headers=None, timeout=(10, 20))
-        resultText = res.text
-        jsonResult = json.loads(resultText)
-        dishList = jsonResult.get('Data').get('DishList')
+        result_text = res.text
+        json_result = json.loads(result_text)
+        dish_list = json_result.get('Data').get('DishList')
 
-        for dish in dishList :
+        for dish in dish_list :
             fo = open("doc/menu.txt", "a", encoding='utf-8')
             try :
                 fo.write(dish.get('DishName')+"\n")
-            except Exception :
+            except Exception as e :
                 self.logger.error("...... 文件写入失败 ......")
+                self.logger.error(e)
             finally :
                 fo.close()
 
