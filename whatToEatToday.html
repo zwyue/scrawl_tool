@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu</title>
+    <style>
+            .hide {
+                display: none;
+            }
+        html {
+                height: 100%
+            }
+        body {
+                width: 100%;
+                height: 100%;
+                padding-top: 50vh;
+                margin-top: -76px;
+                text-align: center;
+                background: rgb(226, 225, 225)
+            }
+
+        button {
+                width : 200px;
+                border: none;
+                border-radius: 10px;
+                padding: 10px 15px;
+                font-size: 1.5rem;
+                background: #fff;
+                /* color: #f2c0ff; */
+                box-shadow: 5px 5px 5px dimgray;
+
+            }
+
+            p {
+                font-size: 1.4rem;
+                color:#ce61e9;
+            }
+    </style>
+</head>
+<body>
+
+    <button id="start">中午吃啥呢？</button>
+    <button id="stop" class="hide">停</button>
+    <p> </p>
+  
+    <script>
+        const lunchPlaces = []
+
+        let timeout = 0;
+
+        let getRandomIndice = (max)=> {
+            return Math.floor(Math.random() * max) 
+        };
+
+        let rollDices = () => {
+            let node = document.querySelector('p');
+        let i = 0;
+            timeout = setInterval(() => {
+            if (i === lunchPlaces.length) {
+                i = 0;
+            }
+            node.textContent = lunchPlaces[i];
+            i++;
+        }, 100)
+        }
+        let count = 0;
+        document.getElementById('start').onclick = () => {
+            rollDices();
+            document.getElementById('start').classList.add('hide');
+            document.getElementById('stop').classList.remove('hide');
+            document.querySelector('p').textContent = '';
+        };
+
+        document.getElementById('stop').onclick = () => {
+            if(count<=4){
+                
+                let rest = lunchPlaces[getRandomIndice(lunchPlaces.length)];
+                clearInterval(timeout);
+                document.getElementById('start').classList.remove('hide');
+                document.getElementById('stop').classList.add('hide');
+                document.querySelector('p').textContent = rest;
+                count++;
+
+            }
+            else{
+                alert('这么挑食中午就别吃了吧')
+            }
+        };
+
+        window.onload = function () {
+            var request = new XMLHttpRequest();
+            request.open("get", "http://localhost:7788/doc/menu.txt");/*设置请求方法与路径*/
+            request.send(null);/*不发送数据到服务器*/
+            request.onload = function () {/*XHR对象获取到返回信息后执行*/
+                if (request.status == 200) {/*返回状态为200，即为数据获取成功*/
+                    debugger
+                    (request.response).split("\n").forEach(element => {
+                        lunchPlaces.push(element.split("\r")[0])
+                    });
+                }
+            }
+        }
+</script>
+</body>
+</html>
