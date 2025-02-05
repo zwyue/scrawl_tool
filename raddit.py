@@ -26,14 +26,15 @@ class Raddit:
 
         # contant = soup.find(attrs={"class" :"_292iotee39Lmt0MkQZ2hPV RichTextJSON-root"}).text
 
-        contant_p = soup.findAll(attrs={"class" :"_1qeIAgB0cPwnLhDF9XSiJM"})
+        content_p = soup.findAll(attrs={"class" :"_1qeIAgB0cPwnLhDF9XSiJM"})
 
         fo = open("doc/speech/speech_dream.txt","a",encoding='utf-8')
         try :
-            for contant in contant_p :
-                fo.write( '\n' +contant.text + '\n' )
-        except Exception :
+            for content in content_p :
+                fo.write( '\n' +content.text + '\n' )
+        except Exception as e:
             self.logger.info(f"...... 文件写入失败 ")
+            self.logger.info(e)
         finally :
             fo.close()
 

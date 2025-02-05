@@ -43,28 +43,26 @@
     <button id="start">中午吃啥呢？</button>
     <button id="stop" class="hide">停</button>
     <p> </p>
-  
+
     <script>
         const lunchPlaces = []
 
         let timeout = 0;
 
-        let getRandomIndice = (max)=> {
-            return Math.floor(Math.random() * max) 
-        };
+        let getRandomIndices = (max)=> Math.floor(Math.random() * max);
 
         let rollDices = () => {
             let node = document.querySelector('p');
-        let i = 0;
+            let i = 0;
             timeout = setInterval(() => {
-            if (i === lunchPlaces.length) {
-                i = 0;
-            }
-            node.textContent = lunchPlaces[i];
-            i++;
-        }, 100)
-        }
+              if (i === lunchPlaces.length) {
+                  i = 0;
+              }
+              node.textContent = lunchPlaces[i];
+              i++;
+            }, 100)}
         let count = 0;
+
         document.getElementById('start').onclick = () => {
             rollDices();
             document.getElementById('start').classList.add('hide');
@@ -74,8 +72,8 @@
 
         document.getElementById('stop').onclick = () => {
             if(count<=4){
-                
-                let rest = lunchPlaces[getRandomIndice(lunchPlaces.length)];
+
+                let rest = lunchPlaces[getRandomIndices(lunchPlaces.length)];
                 clearInterval(timeout);
                 document.getElementById('start').classList.remove('hide');
                 document.getElementById('stop').classList.add('hide');
@@ -89,11 +87,18 @@
         };
 
         window.onload = function () {
-            var request = new XMLHttpRequest();
-            request.open("get", "http://localhost:7788/doc/menu.txt");/*设置请求方法与路径*/
-            request.send(null);/*不发送数据到服务器*/
-            request.onload = function () {/*XHR对象获取到返回信息后执行*/
-                if (request.status == 200) {/*返回状态为200，即为数据获取成功*/
+            let request = new XMLHttpRequest();
+            //设置请求方法与路径
+            request.open("get", "http://localhost:7788/doc/menu.txt");
+
+            //不发送数据到服务器
+            request.send(null);
+
+            //XHR对象获取到返回信息后执行
+            request.onload = function () {
+
+                //返回状态为200，即为数据获取成功
+                if (request.status === 200) {
                     debugger
                     (request.response).split("\n").forEach(element => {
                         lunchPlaces.push(element.split("\r")[0])
