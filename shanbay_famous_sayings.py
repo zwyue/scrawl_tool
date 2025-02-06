@@ -35,18 +35,28 @@ class SVC:
     def __del__(self):
         self.driver.close()
 
-    def open(self, account, password):
+    def open(self):
+        if self.account is None:
+            with open("doc/account.json") as file:
+                try:
+                    data = json.load(file)
+                    account = data['shanbay']['name']
+                    password = data['shanbay']['password']
+
+                    self.account = account
+                    self.password = password
+
+                except Exception as e:
+                    self.logger.info('...... read account.json fail ......')
+                    self.logger.info(e)
+                finally:
+                    file.close()
         """
         打开网页输入用户名密码
         :return: None
         """
         self.driver.get(self.url)
-        account_container = self.driver_wait.until(EC.presence_of_element_located((By.ID, 'input-account')))
-        password_container = self.driver_wait.until(EC.presence_of_element_located((By.ID, 'input-password')))
-        account_container.send_keys(account)
-        password_container.send_keys(password)
-        self.account = account
-        self.password = password
+
 
     @staticmethod
     def get_track(distance):
@@ -84,28 +94,13 @@ class SVC:
         ActionChains(self.driver).release().perform()
         self.logger.info('...... finish moving ......')
 
-    def set_account(self):
-        if self.account is None:
-            with open("doc/account.json") as file:
-                try:
-                    data = json.load(file)
-                    account = data['shanbay']['name']
-                    password = data['shanbay']['password']
-                    self.open(account, password)
-                except Exception as e:
-                    self.logger.info('...... read account.json fail ......')
-                    self.logger.info(e)
-                finally:
-                    file.close()
-
     def crack(self):
         # 滚动标签ID
         slide_block_element = self.driver.find_elements(By.CLASS_NAME, 'nc-lang-cnt')
 
+        is_login = True
         if slide_block_element:
             is_login = self.slide_block(slide_block_element)
-        else:
-            is_login = True
         if is_login:
             self.write_txt()
 
@@ -137,11 +132,17 @@ class SVC:
 
 
     def login(self):
-        """
-        登录
-        :return: None
-        """
         try:
+            account_container = self.driver_wait.until(EC.presence_of_element_located((By.ID, 'input-account')))
+            password_container = self.driver_wait.until(EC.presence_of_element_located((By.ID, 'input-password')))
+
+            account_container.clear()
+            password_container.clear()
+
+            account_container.send_keys(self.account)
+            password_container.send_keys(self.password)
+
+
             submit = self.driver_wait.until(EC.element_to_be_clickable((By.ID, 'button-login')))
             submit.click()
             self.logger.info('...... 登录成功 ......'+time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())))
@@ -150,9 +151,11 @@ class SVC:
 
             error_msg = self.driver.find_elements(By.CLASS_NAME, 'error-msg')
             if error_msg:
-                self.logger.info(error_msg[0].text)
-                time.sleep(10)
-                self.login()
+                text = error_msg[0].text
+                if text == '验证失败，请重试～':
+                    time.sleep(20)
+                    self.login()
+                self.logger.info(text)
             return True
         except Exception as e:
             self.logger.info(e)
@@ -177,6 +180,6 @@ class SVC:
 
 if __name__ == '__main__':
     self = SVC()
-    self.set_account()
+    self.open()
     self.login()
     self.crack()
