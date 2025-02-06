@@ -4,12 +4,12 @@ import os
 
 logger = logging.getLogger()
 
-def init(self):
+def init(self,locate='./Logs\\'):
     # Log等级总开关
     self.logger.setLevel(logging.INFO)
     # 第二步，创建一个handler，用于写入日志文件
     rq = time.strftime('%Y%m%d%H%M', time.localtime(time.time()))
-    log_path = mkdir('./Logs\\')
+    log_path = mkdir(locate)
     log_name = log_path + rq + '.log'
     logfile = log_name
     fh = logging.FileHandler(logfile, mode='w', encoding="UTF-8")

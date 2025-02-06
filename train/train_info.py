@@ -11,7 +11,7 @@ class Train:
 
     def __init__(self):
         self.sess = requests.session()
-        init_log.init(self)
+        init_log.init(self,locate='../Logs\\')
 
 
 if __name__ == '__main__':
