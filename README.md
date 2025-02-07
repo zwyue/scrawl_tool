@@ -3,6 +3,8 @@
 ### 田间小站 https://www.tjxz.cc
 ### 扇贝 https://web.shanbay.com
 
+### chromdriver下载 https://googlechromelabs.github.io/chrome-for-testing/#stable
+
 ### 菜单 html
  - 运行 [菜单](scratch_menu.py) 生成 doc/menu.txt
  - 使用 nginx 部署静态资源

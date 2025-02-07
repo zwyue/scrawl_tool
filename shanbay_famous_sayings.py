@@ -87,20 +87,24 @@ class SVC:
         :return:
         """
         self.logger.info('...... start moving ......')
-        ActionChains(self.driver).click_and_hold(slider).perform()
-        for x in track:
-            ActionChains(self.driver).move_by_offset(xoffset=x, yoffset=0).perform()
-        time.sleep(0.5)
-        ActionChains(self.driver).release().perform()
-        self.logger.info('...... finish moving ......')
+        try:
+            ActionChains(self.driver).click_and_hold(slider).perform()
+            for x in track:
+                ActionChains(self.driver).move_by_offset(xoffset=x, yoffset=0).perform()
+            time.sleep(0.5)
+            ActionChains(self.driver).release().perform()
+            self.logger.info('...... finish moving ......')
+        except Exception as e:
+            self.logger.error(e)
 
     def crack(self):
         # 滚动标签ID
-        slide_block_element = self.driver.find_elements(By.CLASS_NAME, 'nc-lang-cnt')
+        # slide_block_element = self.driver.find_elements(By.CLASS_NAME, 'nc-lang-cnt')
+        slide_block_element = self.driver.find_elements(By.ID, 'nc_1_n1z')
 
         is_login = True
         if slide_block_element:
-            is_login = self.slide_block(slide_block_element)
+            is_login = self.slide_block(slide_block_element[0])
         if is_login:
             self.write_txt()
 
@@ -115,6 +119,7 @@ class SVC:
                 EC.text_to_be_present_in_element((By.CLASS_NAME, 'nc-lang-cnt'), '验证通过'))
         except Exception as e:
             self.logger.error(e)
+            return self.login()
 
         # 失败后重试
         if not success:
@@ -130,32 +135,30 @@ class SVC:
         else:
             return True
 
+    def set_account(self):
+        account_container = self.driver_wait.until(EC.presence_of_element_located((By.ID, 'input-account')))
+        password_container = self.driver_wait.until(EC.presence_of_element_located((By.ID, 'input-password')))
+        account_container.send_keys(self.account)
+        time.sleep(2)
+        password_container.send_keys(self.password)
+        time.sleep(1)
 
     def login(self):
         try:
-            account_container = self.driver_wait.until(EC.presence_of_element_located((By.ID, 'input-account')))
-            password_container = self.driver_wait.until(EC.presence_of_element_located((By.ID, 'input-password')))
-
-            account_container.clear()
-            password_container.clear()
-
-            account_container.send_keys(self.account)
-            password_container.send_keys(self.password)
-
-
             submit = self.driver_wait.until(EC.element_to_be_clickable((By.ID, 'button-login')))
+            self.logger.info('...... 点击登录 ......'+time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())))
             submit.click()
-            self.logger.info('...... 登录成功 ......'+time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())))
-            time.sleep(5)
-            self.logger.info('...... 程序继续 ......'+time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())))
-
+            time.sleep(2)
             error_msg = self.driver.find_elements(By.CLASS_NAME, 'error-msg')
             if error_msg:
                 text = error_msg[0].text
+                self.logger.info(text + time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())))
                 if text == '验证失败，请重试～':
-                    time.sleep(20)
+                    self.driver.refresh()
+                    time.sleep(5)
+                    self.set_account()
                     self.login()
-                self.logger.info(text)
+            time.sleep(5)
             return True
         except Exception as e:
             self.logger.info(e)
@@ -163,23 +166,28 @@ class SVC:
 
     def write_txt(self):
         self.logger.info('...... locate element ......')
-        famous_saying_element = self.driver.find_element(By.ID, 'quote')
-        if famous_saying_element:
-            famous_saying = famous_saying_element.text
+        famous_saying_elements = self.driver.find_elements(By.ID, 'quote')
+        if famous_saying_elements:
+            famous_saying = famous_saying_elements[0].text
             self.logger.info("...... 写入文件 ......")
             self.logger.info(famous_saying)
-            fo = open("doc/famous_saying.txt", "a", encoding='utf-8')
-            write_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
+            fo = None
             try:
+                fo = open("doc/famous_saying.txt", "a", encoding='utf-8')
+                write_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
                 fo.write('\n' + famous_saying + '\n' + write_time + '\n')
             except Exception as e:
                 self.logger.error("...... 文件写入失败 ......")
                 self.logger.error(e)
             finally:
                 fo.close()
+                self.driver.close()
+        else:
+            self.driver.close()
 
 if __name__ == '__main__':
     self = SVC()
     self.open()
+    self.set_account()
     self.login()
     self.crack()
