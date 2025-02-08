@@ -113,7 +113,6 @@ class SVC:
         track = self.get_track(268)
         self.logger.info(f'...... 滑动轨迹 {track} ......')
         self.move_to_gap(block, track)
-        success = False
         try:
             success = self.driver_wait.until(
                 EC.text_to_be_present_in_element((By.CLASS_NAME, 'nc-lang-cnt'), '验证通过'))
