@@ -9,7 +9,6 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 from log import init_log
 
-
 class SVC:
     # 创建一个logger
     logger = init_log.logger
@@ -33,7 +32,8 @@ class SVC:
         self.password=None
 
     def __del__(self):
-        self.driver.close()
+        if self.driver is not None:
+            self.driver.close()
 
     def open(self):
         if self.account is None:
@@ -180,9 +180,6 @@ class SVC:
                 self.logger.error(e)
             finally:
                 fo.close()
-                self.driver.close()
-        else:
-            self.driver.close()
 
 if __name__ == '__main__':
     self = SVC()

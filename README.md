@@ -5,6 +5,11 @@
 
 ### chromdriver下载 https://googlechromelabs.github.io/chrome-for-testing/#stable
 
+### 更新 requirements.txt 
+```
+pip3 freeze > requirements.txt
+```
+
 ### 菜单 html
  - 运行 [菜单](scratch_menu.py) 生成 doc/menu.txt
  - 使用 nginx 部署静态资源
