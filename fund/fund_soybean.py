@@ -1,15 +1,7 @@
 # -*- coding:utf-8 -*-
 
 from selenium import webdriver
-from selenium.webdriver.support.ui import WebDriverWait
 import time
-
-option = webdriver.ChromeOptions()
-# 开发者模式的开关，设置一下，打开浏览器就不会识别为自动化测试工具了
-option.add_experimental_option('excludeSwitches', ['enable-automation'])
-option.add_experimental_option('useAutomationExtension', False)
-option.add_argument("--disable-blink-features")
-option.add_argument("--disable-blink-features=AutomationControlled")
 
 # 创建 WebDriver
 driver = webdriver.Firefox()
@@ -19,13 +11,41 @@ url = 'http://www.dce.com.cn/dalianshangpin/sspz/487180/index.html'  # 替换为
 driver.get(url)
 
 # 等待页面加载（可根据实际情况调整）
-time.sleep(3)
+time.sleep(60)
 
-network = driver.execute_script("return window.performance.getEntries();")
+network = driver.execute_script("var performance = window.performance || window.mozPerformance || window.msPerformance || window.webkitPerformance || {}; var network = performance.getEntries() || {}; return network;")
+
 for data in network:
-    if data["name"].startswith("http"):
+    name = data["name"]
+    if name.startswith("http"):
+        if name.find('.png')>-1:
+            time.sleep(0.1)
+            continue
+        if name.find('.jpg')>-1:
+            time.sleep(0.1)
+            continue
+        if name.find('.css')>-1:
+            time.sleep(0.1)
+            continue
+        if name.find('.gif')>-1:
+            time.sleep(0.1)
+            continue
+        if name.find('.ico')>-1:
+            time.sleep(0.1)
+            continue
+        if name.find('.html')>-1:
+            time.sleep(0.1)
+            continue
+        if name.find('.js')>-1:
+            time.sleep(0.1)
+            continue
         print(data["name"])
-        time.sleep(0.1)
+        time.sleep(0.2)
 
-time.sleep(2)
+time.sleep(20)
+
+# browser_log = driver.get_log('browser')
+#
+# print(browser_log)
+
 driver.quit()

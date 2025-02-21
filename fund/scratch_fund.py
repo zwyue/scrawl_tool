@@ -8,6 +8,7 @@ import fund_nasdaq_sp
 import fund_ftse
 import fund_bz50
 import fund_zz_hs
+import fund_hstech
 
 
 class Fund(object):
@@ -26,7 +27,7 @@ class Fund(object):
         init_log.init(self, locate='../Logs\\')
         self.sess = requests.session()
         self.client = init_client.get_es_client(self)
-        self.index_name = 'last_fund_real_time_price'
+        self.index_name = 'last_fund_real_time_price_write'
 
     def __del__(self):
         self.client.close()
@@ -36,6 +37,7 @@ if __name__ == '__main__':
     fund_bz50.bz50_real_time_info(fund,"https://www.bse.cn/neeqRealController/getRealBZ50.do")
     fund_zz_hs.zz500_real_time_info(fund,"中证500", "000905", "zz500_")
     fund_zz_hs.zz500_real_time_info(fund,"沪深300", "000300", "hs300_")
+    fund_hstech.hstech_real_time_info(fund,"https://www.hsi.com.hk/data/schi/rt/index-series/hstech/performance.do")
     fund_ftse.fs100_real_time_info(fund,"https://www.lseg.com/api/v1/ftserussel/ticker/getindexes")
     fund_nasdaq_sp.nasdaq_real_time_info(fund,"SPX", "标普500", "standardpoor500_")
     fund_nasdaq_sp.nasdaq_real_time_info(fund,"NDX", "纳斯达克100", "nasdaq100_")

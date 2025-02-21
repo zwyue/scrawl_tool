@@ -23,6 +23,6 @@ def fs100_real_time_info(self, url):
         "updatetime": json_data["TimeStamp"],
         "name": "富时100"
     }
-    doc_id = "fs100_" + date
+    doc_id = "fs100_" + date.replace(" 00:00:00.0", '')
     resp = self.client.index(index=self.index_name, id=doc_id.replace("-", ''), document=doc)
     self.logger.info(resp)
