@@ -39,7 +39,7 @@ class Concert(object):
 
     def set_account(self):
         # 读入用户名与密码和昵称
-        with open("../doc/account.json") as file:
+        with open("../account.json") as file:
             try:
                 data = json.load(file)
                 self.uid = data['damai']['name']

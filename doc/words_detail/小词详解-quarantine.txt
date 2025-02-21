@@ -1,0 +1,36 @@
+
+小词详解 | quarantine
+2024年11月30日
+口语与词汇
+
+
+微信关注：田间小站 quarantine 英 [ˈkwɒrəntiːn] 美 [ˈkwɔːrəntiːn]
+SAT TEM8 GMAT GRE
+外刊例句
+
+
+An auditor who worked with ICBC says the bank was surprised by the blowback. It had used a subsidiary to support Jinzhou, hoping to quarantine the rest of its balance-sheet.
+与之合作的审计机构表示，工行对出现这种负作用感到惊讶。工行通过子公司入股锦州银行，希望将它与自己资产负债表内的其他部分隔离开来。
+——《经济学人》
+Severe acute respiratory syndrome had swept the country, forcing the authorities to scramble to get more hospital beds and build more quarantine facilities.
+那一年，严重的急性呼吸道综合症席卷全国，迫使当局紧急设立更多病床，建造更多检疫设施。
+——《纽约时报》
+
+基本释义
+[noun] a state, period, or place of isolation in which people or animals that have arrived from elsewhere or been exposed to infectious or contagious disease are placed
+[名词] 对外来或传染病暴露后的人或动物进行隔离的状态、期间或地方
+深入解读
+14世纪中期，一场毁灭性的瘟疫在欧洲蔓延，这就是所谓的黑死病（Black Death）。它于1346年首先出现在黑海地区，然后沿西南方向向地中海传播，并在随后几年内蔓延至整个欧洲，毁灭了欧洲将近三分之一的人口。
+1347年，威尼斯启动一项措施，强制要求所有来自疫区的船只在港口外停泊40天后才允许靠岸。这段隔离期在意大利语中被称为 quarantina giorni （space of forty days）。其中， quarantina 源自 quaranta （40），意思就是“40左右”。
+后来，人们就逐渐开始用 period of quarantine 表示任何期限的隔离期，而 quarantine 也就成了“隔离”的代名词，既作名词表示“隔离、隔离期、隔离区”，也作动词表示“（对动物或人）进行检疫、隔离”。
+名人名言
+Democratic institutions form a system of quarantine for tyrannical desires.
+民主制度形成了针对暴政欲望的隔离制度。
+出自弗里德里希·威廉·尼采（Friedrich Wilhelm Nietzsche，1844年10月15日—1900年8月25日），德国哲学家、语言学家、文化评论家、诗人、作曲家、思想家。尼采被认为是西方现代哲学的开创者，他的著作对于宗教、道德、现代文化、哲学、以及科学等领域提出了广泛的批判和讨论。
+同近义词
+
+isolation: denoting a hospital or ward for patients with contagious or infectious diseases
+segregation: the enforced separation of different racial groups in a country, community, or establishment
+seclusion: the state of being private and away from other people
+
+GRE词汇精讲专八词汇精讲小词详解

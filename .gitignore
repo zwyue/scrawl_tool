@@ -1,7 +1,6 @@
 /.vscode
 /bubble.py
 /deeplearning
-/doc
 /DuplicateChecking.py
 /ielts_essey.py
 /Logs
@@ -15,3 +14,4 @@
 /sichuan.py
 /t
 /__pycache__
+/account.json

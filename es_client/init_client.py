@@ -7,7 +7,7 @@ logger = init_log.logger
 def get_es_client(self):
     init_log.init(self, locate='../Logs\\')
 
-    with open("../doc/account.json") as file:
+    with open("../account.json") as file:
         try:
             data = json.load(file)
             account = data['elastic']['name']

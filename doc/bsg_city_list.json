@@ -1,0 +1,2858 @@
+[
+    {
+        "city": "北京",
+        "code": "ILP",
+        "cityTrain": "八达岭",
+        "cityTrainPin": "Badaling"
+    },
+    {
+        "city": "北京",
+        "code": "VLP",
+        "cityTrain": "八达岭长城",
+        "cityTrainPin": "Badalingchangcheng"
+    },
+    {
+        "city": "北京",
+        "code": "BJP",
+        "cityTrain": "北京",
+        "cityTrainPin": "Beijing"
+    },
+    {
+        "city": "北京",
+        "code": "VAP",
+        "cityTrain": "北京北",
+        "cityTrainPin": "Beijingbei"
+    },
+    {
+        "city": "北京",
+        "code": "IFP",
+        "cityTrain": "北京朝阳",
+        "cityTrainPin": "Beijingchaoyang"
+    },
+    {
+        "city": "北京",
+        "code": "IPP",
+        "cityTrain": "北京大兴",
+        "cityTrainPin": "Beijingdaxing"
+    },
+    {
+        "city": "北京",
+        "code": "BOP",
+        "cityTrain": "北京东",
+        "cityTrainPin": "Beijingdong"
+    },
+    {
+        "city": "北京",
+        "code": "FTP",
+        "cityTrain": "北京丰台",
+        "cityTrainPin": "Beijingfengtai"
+    },
+    {
+        "city": "北京",
+        "code": "VNP",
+        "cityTrain": "北京南",
+        "cityTrainPin": "Beijingnan"
+    },
+    {
+        "city": "北京",
+        "code": "BXP",
+        "cityTrain": "北京西",
+        "cityTrainPin": "Beijingxi"
+    },
+    {
+        "city": "北京",
+        "code": "CPP",
+        "cityTrain": "昌平",
+        "cityTrainPin": "Changping"
+    },
+    {
+        "city": "北京",
+        "code": "VBP",
+        "cityTrain": "昌平北",
+        "cityTrainPin": "Changpingbei"
+    },
+    {
+        "city": "北京",
+        "code": "IWP",
+        "cityTrain": "大兴机场",
+        "cityTrainPin": "Daxingjichang"
+    },
+    {
+        "city": "北京",
+        "code": "FTP",
+        "cityTrain": "丰台",
+        "cityTrainPin": "Beijingfengtai"
+    },
+    {
+        "city": "北京",
+        "code": "GKP",
+        "cityTrain": "古北口",
+        "cityTrainPin": "Gubeikou"
+    },
+    {
+        "city": "北京",
+        "code": "HVP",
+        "cityTrain": "黑山寺",
+        "cityTrainPin": "Heishansi"
+    },
+    {
+        "city": "北京",
+        "code": "HRP",
+        "cityTrain": "怀柔",
+        "cityTrainPin": "Huairou"
+    },
+    {
+        "city": "北京",
+        "code": "HBP",
+        "cityTrain": "怀柔北",
+        "cityTrainPin": "Huairoubei"
+    },
+    {
+        "city": "北京",
+        "code": "IMP",
+        "cityTrain": "怀柔南",
+        "cityTrainPin": "Huairounan"
+    },
+    {
+        "city": "北京",
+        "code": "HCP",
+        "cityTrain": "黄村",
+        "cityTrainPin": "Huangcun"
+    },
+    {
+        "city": "北京",
+        "code": "HKP",
+        "cityTrain": "黄土店",
+        "cityTrainPin": "Huangtudian"
+    },
+    {
+        "city": "北京",
+        "code": "KZP",
+        "cityTrain": "康庄",
+        "cityTrainPin": "Kangzhuang"
+    },
+    {
+        "city": "北京",
+        "code": "LXI",
+        "cityTrain": "礼贤",
+        "cityTrainPin": "Lixian"
+    },
+    {
+        "city": "北京",
+        "code": "LAP",
+        "cityTrain": "良乡",
+        "cityTrainPin": "Liangxiang"
+    },
+    {
+        "city": "北京",
+        "code": "MYP",
+        "cityTrain": "密云",
+        "cityTrainPin": "Miyun"
+    },
+    {
+        "city": "北京",
+        "code": "MUP",
+        "cityTrain": "密云北",
+        "cityTrainPin": "Miyunbei"
+    },
+    {
+        "city": "北京",
+        "code": "NKP",
+        "cityTrain": "南口",
+        "cityTrainPin": "Nankou"
+    },
+    {
+        "city": "北京",
+        "code": "NLP",
+        "cityTrain": "牛栏山",
+        "cityTrainPin": "Niulanshan"
+    },
+    {
+        "city": "北京",
+        "code": "QEP",
+        "cityTrain": "乔庄东",
+        "cityTrainPin": "Qiaozhuangdong"
+    },
+    {
+        "city": "北京",
+        "code": "QIP",
+        "cityTrain": "清河",
+        "cityTrainPin": "Qinghe"
+    },
+    {
+        "city": "北京",
+        "code": "QHP",
+        "cityTrain": "清华园",
+        "cityTrainPin": "Qinghuayuan"
+    },
+    {
+        "city": "北京",
+        "code": "ODP",
+        "cityTrain": "三家店",
+        "cityTrainPin": "Sanjiadian"
+    },
+    {
+        "city": "北京",
+        "code": "SHP",
+        "cityTrain": "沙河",
+        "cityTrainPin": "Shahe"
+    },
+    {
+        "city": "北京",
+        "code": "SEP",
+        "cityTrain": "十渡",
+        "cityTrainPin": "Shidu"
+    },
+    {
+        "city": "北京",
+        "code": "SRP",
+        "cityTrain": "石景山南",
+        "cityTrainPin": "Shijingshannan"
+    },
+    {
+        "city": "北京",
+        "code": "SOP",
+        "cityTrain": "顺义",
+        "cityTrainPin": "Shunyi"
+    },
+    {
+        "city": "北京",
+        "code": "IKP",
+        "cityTrain": "顺义西",
+        "cityTrainPin": "Shunyixi"
+    },
+    {
+        "city": "北京",
+        "code": "TOP",
+        "cityTrain": "通州",
+        "cityTrainPin": "Tongzhou"
+    },
+    {
+        "city": "北京",
+        "code": "TAP",
+        "cityTrain": "通州西",
+        "cityTrainPin": "Tongzhouxi"
+    },
+    {
+        "city": "北京",
+        "code": "YNP",
+        "cityTrain": "延庆",
+        "cityTrainPin": "Yanqing"
+    },
+    {
+        "city": "北京",
+        "code": "FGP",
+        "cityTrain": "雁栖湖",
+        "cityTrainPin": "Yanqihu"
+    },
+    {
+        "city": "北京",
+        "code": "AOP",
+        "cityTrain": "燕山",
+        "cityTrainPin": "Yanshan"
+    },
+    {
+        "city": "北京",
+        "code": "YUP",
+        "cityTrain": "亦庄",
+        "cityTrainPin": "Yizhuang"
+    },
+    {
+        "city": "广州",
+        "code": "BBA",
+        "cityTrain": "白云机场北",
+        "cityTrainPin": "Baiyunjichangbei"
+    },
+    {
+        "city": "深圳",
+        "code": "BTQ",
+        "cityTrain": "坂田",
+        "cityTrainPin": "Bantian"
+    },
+    {
+        "city": "顺德",
+        "code": "IBQ",
+        "cityTrain": "北滘",
+        "cityTrainPin": "Beijiao"
+    },
+    {
+        "city": "佛山",
+        "code": "BJA",
+        "cityTrain": "北滘西",
+        "cityTrainPin": "Beijiaoxi"
+    },
+    {
+        "city": "佛山",
+        "code": "BLQ",
+        "cityTrain": "碧江",
+        "cityTrainPin": "Bijiang"
+    },
+    {
+        "city": "惠州",
+        "code": "BOA",
+        "cityTrain": "博罗",
+        "cityTrainPin": "Boluo"
+    },
+    {
+        "city": "惠州",
+        "code": "BLA",
+        "cityTrain": "博罗北",
+        "cityTrainPin": "Boluobei"
+    },
+    {
+        "city": "东莞",
+        "code": "DAQ",
+        "cityTrain": "常平",
+        "cityTrainPin": "Changping"
+    },
+    {
+        "city": "东莞",
+        "code": "FQQ",
+        "cityTrain": "常平东",
+        "cityTrainPin": "ChangPingDong"
+    },
+    {
+        "city": "东莞",
+        "code": "FPQ",
+        "cityTrain": "常平南",
+        "cityTrainPin": "Changpingnan"
+    },
+    {
+        "city": "汕头",
+        "code": "CHA",
+        "cityTrain": "潮南",
+        "cityTrainPin": "Chaonan"
+    },
+    {
+        "city": "潮州",
+        "code": "CBQ",
+        "cityTrain": "潮汕",
+        "cityTrainPin": "Chaoshan"
+    },
+    {
+        "city": "汕头",
+        "code": "CNQ",
+        "cityTrain": "潮阳",
+        "cityTrainPin": "Chaoyang"
+    },
+    {
+        "city": "潮州",
+        "code": "CKQ",
+        "cityTrain": "潮州",
+        "cityTrainPin": "Chaozhou"
+    },
+    {
+        "city": "佛山",
+        "code": "CVA",
+        "cityTrain": "陈村",
+        "cityTrainPin": "Chencun"
+    },
+    {
+        "city": "惠州",
+        "code": "KKQ",
+        "cityTrain": "陈江南",
+        "cityTrainPin": "Chenjiangnan"
+    },
+    {
+        "city": "阳江",
+        "code": "CQQ",
+        "cityTrain": "春湾",
+        "cityTrainPin": "Chunwan"
+    },
+    {
+        "city": "中山",
+        "code": "IHQ",
+        "cityTrain": "翠亨",
+        "cityTrainPin": "Cuiheng"
+    },
+    {
+        "city": "东莞",
+        "code": "KOQ",
+        "cityTrain": "大朗镇",
+        "cityTrainPin": "Dalangzhen"
+    },
+    {
+        "city": "梅州",
+        "code": "DPI",
+        "cityTrain": "大埔",
+        "cityTrainPin": "Dapu"
+    },
+    {
+        "city": "肇庆",
+        "code": "WWQ",
+        "cityTrain": "大旺",
+        "cityTrainPin": "DaWang"
+    },
+    {
+        "city": "韶关",
+        "code": "IRQ",
+        "cityTrain": "丹霞山",
+        "cityTrainPin": "Danxiashan"
+    },
+    {
+        "city": "东莞",
+        "code": "RRQ",
+        "cityTrain": "道滘",
+        "cityTrainPin": "Daojiao"
+    },
+    {
+        "city": "茂名",
+        "code": "NWQ",
+        "cityTrain": "电白",
+        "cityTrainPin": "Dianbai"
+    },
+    {
+        "city": "肇庆",
+        "code": "UWQ",
+        "cityTrain": "鼎湖东",
+        "cityTrainPin": "DingHuDong"
+    },
+    {
+        "city": "肇庆",
+        "code": "NVQ",
+        "cityTrain": "鼎湖山",
+        "cityTrainPin": "DingHuShan"
+    },
+    {
+        "city": "东莞",
+        "code": "IYQ",
+        "cityTrain": "东城南",
+        "cityTrainPin": "Dongchengnan"
+    },
+    {
+        "city": "东莞",
+        "code": "RTQ",
+        "cityTrain": "东莞",
+        "cityTrainPin": "Dongguan"
+    },
+    {
+        "city": "东莞",
+        "code": "DMQ",
+        "cityTrain": "东莞东",
+        "cityTrainPin": "Dongguandong"
+    },
+    {
+        "city": "东莞",
+        "code": "DGA",
+        "cityTrain": "东莞港",
+        "cityTrainPin": "Dongguangang"
+    },
+    {
+        "city": "东莞",
+        "code": "DNA",
+        "cityTrain": "东莞南",
+        "cityTrainPin": "Dongguannan"
+    },
+    {
+        "city": "东莞",
+        "code": "WGQ",
+        "cityTrain": "东莞西",
+        "cityTrainPin": "Dongguanxi"
+    },
+    {
+        "city": "广州",
+        "code": "DHA",
+        "cityTrain": "东环",
+        "cityTrainPin": "Donghuan"
+    },
+    {
+        "city": "中山",
+        "code": "DRQ",
+        "cityTrain": "东升",
+        "cityTrainPin": "Dongsheng"
+    },
+    {
+        "city": "肇庆",
+        "code": "WZQ",
+        "cityTrain": "端州",
+        "cityTrainPin": "DuanZhou"
+    },
+    {
+        "city": "江门",
+        "code": "PXQ",
+        "cityTrain": "恩平",
+        "cityTrainPin": "Enping"
+    },
+    {
+        "city": "广州",
+        "code": "PYA",
+        "cityTrain": "番禺",
+        "cityTrainPin": "Panyu"
+    },
+    {
+        "city": "丰顺",
+        "code": "FUQ",
+        "cityTrain": "丰顺",
+        "cityTrainPin": "Fengshun"
+    },
+    {
+        "city": "丰顺",
+        "code": "FDA",
+        "cityTrain": "丰顺东",
+        "cityTrainPin": "Fengshundong"
+    },
+    {
+        "city": "佛山",
+        "code": "FSQ",
+        "cityTrain": "佛山",
+        "cityTrainPin": "Foshan"
+    },
+    {
+        "city": "佛山",
+        "code": "FOQ",
+        "cityTrain": "佛山西",
+        "cityTrainPin": "Foshanxi"
+    },
+    {
+        "city": "深圳",
+        "code": "FHA",
+        "cityTrain": "福海西",
+        "cityTrainPin": "Fuhaixi"
+    },
+    {
+        "city": "深圳",
+        "code": "NZQ",
+        "cityTrain": "福田",
+        "cityTrainPin": "Futian"
+    },
+    {
+        "city": "茂名",
+        "code": "GSQ",
+        "cityTrain": "高州",
+        "cityTrainPin": "Gaozhou"
+    },
+    {
+        "city": "中山",
+        "code": "GNQ",
+        "cityTrain": "古镇",
+        "cityTrainPin": "Guzhen"
+    },
+    {
+        "city": "广州",
+        "code": "GQA",
+        "cityTrain": "官桥北",
+        "cityTrainPin": "Guanqiaobei"
+    },
+    {
+        "city": "深圳",
+        "code": "IMQ",
+        "cityTrain": "光明城",
+        "cityTrainPin": "Guangmingcheng"
+    },
+    {
+        "city": "肇庆",
+        "code": "FBQ",
+        "cityTrain": "广宁",
+        "cityTrainPin": "Guangning"
+    },
+    {
+        "city": "广州",
+        "code": "GZQ",
+        "cityTrain": "广州",
+        "cityTrainPin": "Guangzhou"
+    },
+    {
+        "city": "广州",
+        "code": "GBA",
+        "cityTrain": "广州白云",
+        "cityTrainPin": "Guangzhoubaiyun"
+    },
+    {
+        "city": "广州",
+        "code": "GBQ",
+        "cityTrain": "广州北",
+        "cityTrainPin": "Guangzhoubei"
+    },
+    {
+        "city": "广州",
+        "code": "GGQ",
+        "cityTrain": "广州东",
+        "cityTrainPin": "Guangzhoudong"
+    },
+    {
+        "city": "广州",
+        "code": "GLA",
+        "cityTrain": "广州莲花山",
+        "cityTrainPin": "Guangzhoulianhuashan"
+    },
+    {
+        "city": "广州",
+        "code": "IZQ",
+        "cityTrain": "广州南",
+        "cityTrainPin": "Guangzhounan"
+    },
+    {
+        "city": "广州",
+        "code": "GXQ",
+        "cityTrain": "广州西",
+        "cityTrainPin": "Guangzhouxi"
+    },
+    {
+        "city": "广州",
+        "code": "GCA",
+        "cityTrain": "广州长隆",
+        "cityTrainPin": "Guangzhouchanglong"
+    },
+    {
+        "city": "河源",
+        "code": "VAQ",
+        "cityTrain": "和平",
+        "cityTrainPin": "Heping"
+    },
+    {
+        "city": "河源",
+        "code": "HPA",
+        "cityTrain": "和平北",
+        "cityTrainPin": "Hepingbei"
+    },
+    {
+        "city": "廉江",
+        "code": "HCZ",
+        "cityTrain": "河唇",
+        "cityTrainPin": "Hechun"
+    },
+    {
+        "city": "河源",
+        "code": "VIQ",
+        "cityTrain": "河源",
+        "cityTrainPin": "Heyuan"
+    },
+    {
+        "city": "河源",
+        "code": "HYA",
+        "cityTrain": "河源北",
+        "cityTrainPin": "Heyuanbei"
+    },
+    {
+        "city": "河源",
+        "code": "HEA",
+        "cityTrain": "河源东",
+        "cityTrainPin": "Heyuandong"
+    },
+    {
+        "city": "珠海",
+        "code": "HQA",
+        "cityTrain": "横琴",
+        "cityTrainPin": "Hengqin"
+    },
+    {
+        "city": "珠海",
+        "code": "HOA",
+        "cityTrain": "横琴北",
+        "cityTrainPin": "Hengqinbei"
+    },
+    {
+        "city": "东莞",
+        "code": "HMA",
+        "cityTrain": "洪梅",
+        "cityTrainPin": "Hongmei"
+    },
+    {
+        "city": "东莞",
+        "code": "HJA",
+        "cityTrain": "厚街",
+        "cityTrainPin": "Houjie"
+    },
+    {
+        "city": "汕尾",
+        "code": "KMQ",
+        "cityTrain": "鲘门",
+        "cityTrainPin": "Houmen"
+    },
+    {
+        "city": "东莞",
+        "code": "IUQ",
+        "cityTrain": "虎门",
+        "cityTrainPin": "Humen"
+    },
+    {
+        "city": "东莞",
+        "code": "HBA",
+        "cityTrain": "虎门北",
+        "cityTrainPin": "Humenbei"
+    },
+    {
+        "city": "东莞",
+        "code": "HDA",
+        "cityTrain": "虎门东",
+        "cityTrainPin": "Humendong"
+    },
+    {
+        "city": "广州",
+        "code": "HCA",
+        "cityTrain": "花城街",
+        "cityTrainPin": "Huachengjie"
+    },
+    {
+        "city": "广州",
+        "code": "HAA",
+        "cityTrain": "花都",
+        "cityTrainPin": "Huadu"
+    },
+    {
+        "city": "广州",
+        "code": "HZA",
+        "cityTrain": "花山镇",
+        "cityTrainPin": "Huashanzhen"
+    },
+    {
+        "city": "梅州",
+        "code": "VCQ",
+        "cityTrain": "华城",
+        "cityTrainPin": "Huacheng"
+    },
+    {
+        "city": "茂名",
+        "code": "HZZ",
+        "cityTrain": "化州",
+        "cityTrainPin": "Huazhou"
+    },
+    {
+        "city": "肇庆",
+        "code": "FAQ",
+        "cityTrain": "怀集",
+        "cityTrainPin": "Huaiji"
+    },
+    {
+        "city": "惠州",
+        "code": "KDA",
+        "cityTrain": "惠东",
+        "cityTrainPin": "Huidong"
+    },
+    {
+        "city": "惠州",
+        "code": "KDQ",
+        "cityTrain": "惠东南",
+        "cityTrainPin": "Huidongnan"
+    },
+    {
+        "city": "惠州",
+        "code": "KHQ",
+        "cityTrain": "惠环",
+        "cityTrainPin": "HuiHuan"
+    },
+    {
+        "city": "揭阳",
+        "code": "HGA",
+        "cityTrain": "惠来",
+        "cityTrainPin": "Huilai"
+    },
+    {
+        "city": "惠州",
+        "code": "KNQ",
+        "cityTrain": "惠阳",
+        "cityTrainPin": "Huiyang"
+    },
+    {
+        "city": "惠州",
+        "code": "HCQ",
+        "cityTrain": "惠州",
+        "cityTrainPin": "Huizhou"
+    },
+    {
+        "city": "惠州",
+        "code": "HUA",
+        "cityTrain": "惠州北",
+        "cityTrainPin": "Huizhoubei"
+    },
+    {
+        "city": "惠州",
+        "code": "KNA",
+        "cityTrain": "惠州南",
+        "cityTrainPin": "Huizhounan"
+    },
+    {
+        "city": "惠州",
+        "code": "VXQ",
+        "cityTrain": "惠州西",
+        "cityTrainPin": "Huizhouxi"
+    },
+    {
+        "city": "梅州",
+        "code": "JQA",
+        "cityTrain": "建桥",
+        "cityTrainPin": "Jianqiao"
+    },
+    {
+        "city": "江门",
+        "code": "JNQ",
+        "cityTrain": "江海",
+        "cityTrainPin": "Jianghai"
+    },
+    {
+        "city": "江门",
+        "code": "JOQ",
+        "cityTrain": "江门",
+        "cityTrainPin": "Jiangmen"
+    },
+    {
+        "city": "江门",
+        "code": "JWQ",
+        "cityTrain": "江门东",
+        "cityTrainPin": "Jiangmendong"
+    },
+    {
+        "city": "揭阳",
+        "code": "JYA",
+        "cityTrain": "揭阳",
+        "cityTrainPin": "Jieyang"
+    },
+    {
+        "city": "揭阳",
+        "code": "JUA",
+        "cityTrain": "揭阳机场",
+        "cityTrainPin": "Jieyangjichang"
+    },
+    {
+        "city": "揭阳",
+        "code": "JRQ",
+        "cityTrain": "揭阳南",
+        "cityTrainPin": "Jieyangnan"
+    },
+    {
+        "city": "珠海",
+        "code": "JWA",
+        "cityTrain": "井湾",
+        "cityTrainPin": "Jingwan"
+    },
+    {
+        "city": "江门",
+        "code": "PVQ",
+        "cityTrain": "开平南",
+        "cityTrainPin": "Kaipingnan"
+    },
+    {
+        "city": "揭阳",
+        "code": "KTQ",
+        "cityTrain": "葵潭",
+        "cityTrainPin": "Kuitan"
+    },
+    {
+        "city": "乐昌",
+        "code": "LCQ",
+        "cityTrain": "乐昌",
+        "cityTrainPin": "Lechang"
+    },
+    {
+        "city": "乐昌",
+        "code": "ILQ",
+        "cityTrain": "乐昌东",
+        "cityTrainPin": "lechangdong"
+    },
+    {
+        "city": "广州",
+        "code": "LEA",
+        "cityTrain": "乐同",
+        "cityTrainPin": "Letong"
+    },
+    {
+        "city": "湛江",
+        "code": "UAQ",
+        "cityTrain": "雷州",
+        "cityTrainPin": "Leizhou"
+    },
+    {
+        "city": "江门",
+        "code": "UEQ",
+        "cityTrain": "礼乐",
+        "cityTrainPin": "Liyue"
+    },
+    {
+        "city": "惠州",
+        "code": "KBQ",
+        "cityTrain": "沥林北",
+        "cityTrainPin": "LiLinBei"
+    },
+    {
+        "city": "廉江",
+        "code": "LJZ",
+        "cityTrain": "廉江",
+        "cityTrainPin": "Lianjiang"
+    },
+    {
+        "city": "东莞",
+        "code": "LTQ",
+        "cityTrain": "寮步",
+        "cityTrainPin": "Liaobu"
+    },
+    {
+        "city": "河源",
+        "code": "LUQ",
+        "cityTrain": "龙川",
+        "cityTrainPin": "Longchuan"
+    },
+    {
+        "city": "河源",
+        "code": "LCA",
+        "cityTrain": "龙川西",
+        "cityTrainPin": "Longchuanxi"
+    },
+    {
+        "city": "惠州",
+        "code": "KFQ",
+        "cityTrain": "龙丰",
+        "cityTrainPin": "LongFeng"
+    },
+    {
+        "city": "清远",
+        "code": "LVB",
+        "cityTrain": "龙塘镇",
+        "cityTrainPin": "Longtangzhen"
+    },
+    {
+        "city": "汕尾",
+        "code": "LLQ",
+        "cityTrain": "陆丰",
+        "cityTrainPin": "Lufeng"
+    },
+    {
+        "city": "汕尾",
+        "code": "LDA",
+        "cityTrain": "陆丰东",
+        "cityTrainPin": "Lufengdong"
+    },
+    {
+        "city": "汕尾",
+        "code": "LAA",
+        "cityTrain": "陆丰南",
+        "cityTrainPin": "Lufengnan"
+    },
+    {
+        "city": "惠州",
+        "code": "LVA",
+        "cityTrain": "罗浮山",
+        "cityTrainPin": "Luofushan"
+    },
+    {
+        "city": "东莞",
+        "code": "MIA",
+        "cityTrain": "麻涌",
+        "cityTrainPin": "Machong"
+    },
+    {
+        "city": "茂名",
+        "code": "PWQ",
+        "cityTrain": "马踏",
+        "cityTrainPin": "Mata"
+    },
+    {
+        "city": "茂名",
+        "code": "MDQ",
+        "cityTrain": "茂名",
+        "cityTrainPin": "Maoming"
+    },
+    {
+        "city": "茂名",
+        "code": "MMZ",
+        "cityTrain": "茂名西",
+        "cityTrainPin": "Maomingxi"
+    },
+    {
+        "city": "梅州",
+        "code": "MOQ",
+        "cityTrain": "梅州",
+        "cityTrainPin": "Meizhou"
+    },
+    {
+        "city": "梅州",
+        "code": "MXA",
+        "cityTrain": "梅州西",
+        "cityTrainPin": "Meizhouxi"
+    },
+    {
+        "city": "珠海",
+        "code": "MFQ",
+        "cityTrain": "明珠",
+        "cityTrainPin": "Mingzhu"
+    },
+    {
+        "city": "云浮",
+        "code": "NDQ",
+        "cityTrain": "南江口",
+        "cityTrainPin": "Nanjiangkou"
+    },
+    {
+        "city": "中山",
+        "code": "NNQ",
+        "cityTrain": "南朗",
+        "cityTrainPin": "Nanlang"
+    },
+    {
+        "city": "中山",
+        "code": "NOQ",
+        "cityTrain": "南头",
+        "cityTrainPin": "Nantou"
+    },
+    {
+        "city": "南雄",
+        "code": "NCQ",
+        "cityTrain": "南雄",
+        "cityTrainPin": "Nanxiong"
+    },
+    {
+        "city": "深圳",
+        "code": "PHQ",
+        "cityTrain": "平湖",
+        "cityTrainPin": "Pinghu"
+    },
+    {
+        "city": "韶关",
+        "code": "PSQ",
+        "cityTrain": "坪石",
+        "cityTrainPin": "Pingshi"
+    },
+    {
+        "city": "揭阳",
+        "code": "PEQ",
+        "cityTrain": "普宁",
+        "cityTrainPin": "Puning"
+    },
+    {
+        "city": "珠海",
+        "code": "QXQ",
+        "cityTrain": "前山",
+        "cityTrainPin": "Qianshan"
+    },
+    {
+        "city": "清远",
+        "code": "QCA",
+        "cityTrain": "清城",
+        "cityTrainPin": "Qingcheng"
+    },
+    {
+        "city": "清远",
+        "code": "QBQ",
+        "cityTrain": "清远",
+        "cityTrainPin": "Qingyuan"
+    },
+    {
+        "city": "广州",
+        "code": "QSQ",
+        "cityTrain": "庆盛",
+        "cityTrainPin": "Qingsheng"
+    },
+    {
+        "city": "潮州",
+        "code": "RVQ",
+        "cityTrain": "饶平",
+        "cityTrainPin": "Raoping"
+    },
+    {
+        "city": "佛山",
+        "code": "RUQ",
+        "cityTrain": "容桂",
+        "cityTrainPin": "Ronggui"
+    },
+    {
+        "city": "佛山",
+        "code": "SJQ",
+        "cityTrain": "三水",
+        "cityTrainPin": "Sanshui"
+    },
+    {
+        "city": "佛山",
+        "code": "ARQ",
+        "cityTrain": "三水北",
+        "cityTrainPin": "SanShuiBei"
+    },
+    {
+        "city": "佛山",
+        "code": "RNQ",
+        "cityTrain": "三水南",
+        "cityTrainPin": "Sanshuinan"
+    },
+    {
+        "city": "珠海",
+        "code": "SAA",
+        "cityTrain": "三灶东",
+        "cityTrainPin": "Sanzaodong"
+    },
+    {
+        "city": "深圳",
+        "code": "SJA",
+        "cityTrain": "沙井西",
+        "cityTrainPin": "Shajingxi"
+    },
+    {
+        "city": "汕头",
+        "code": "OTQ",
+        "cityTrain": "汕头",
+        "cityTrainPin": "Shantou"
+    },
+    {
+        "city": "汕头",
+        "code": "SNA",
+        "cityTrain": "汕头南",
+        "cityTrainPin": "Shantounan"
+    },
+    {
+        "city": "汕尾",
+        "code": "OGQ",
+        "cityTrain": "汕尾",
+        "cityTrainPin": "Shanwei"
+    },
+    {
+        "city": "韶关",
+        "code": "SNQ",
+        "cityTrain": "韶关",
+        "cityTrainPin": "Shaoguan"
+    },
+    {
+        "city": "韶关",
+        "code": "SGQ",
+        "cityTrain": "韶关东",
+        "cityTrainPin": "Shaoguandong"
+    },
+    {
+        "city": "梅州",
+        "code": "SOA",
+        "cityTrain": "畲江北",
+        "cityTrainPin": "Shejiangbei"
+    },
+    {
+        "city": "深圳",
+        "code": "SZQ",
+        "cityTrain": "深圳",
+        "cityTrainPin": "Shenzhen"
+    },
+    {
+        "city": "深圳",
+        "code": "IOQ",
+        "cityTrain": "深圳北",
+        "cityTrainPin": "Shenzhenbei"
+    },
+    {
+        "city": "深圳",
+        "code": "BJQ",
+        "cityTrain": "深圳东",
+        "cityTrainPin": "Shenzhendong"
+    },
+    {
+        "city": "深圳",
+        "code": "SCA",
+        "cityTrain": "深圳机场",
+        "cityTrainPin": "Shenzhenjichang"
+    },
+    {
+        "city": "深圳",
+        "code": "SBA",
+        "cityTrain": "深圳机场北",
+        "cityTrainPin": "Shenzhenjichangbei"
+    },
+    {
+        "city": "深圳",
+        "code": "IFQ",
+        "cityTrain": "深圳坪山",
+        "cityTrainPin": "Shenzhenpingshan"
+    },
+    {
+        "city": "深圳",
+        "code": "OSQ",
+        "cityTrain": "深圳西",
+        "cityTrainPin": "Shenzhenxi"
+    },
+    {
+        "city": "广州",
+        "code": "SLA",
+        "cityTrain": "狮岭",
+        "cityTrainPin": "Shiling"
+    },
+    {
+        "city": "佛山",
+        "code": "KSQ",
+        "cityTrain": "狮山",
+        "cityTrainPin": "ShiShan"
+    },
+    {
+        "city": "佛山",
+        "code": "NSQ",
+        "cityTrain": "狮山北",
+        "cityTrainPin": "ShiShanBei"
+    },
+    {
+        "city": "珠海",
+        "code": "SIA",
+        "cityTrain": "十字门",
+        "cityTrainPin": "Shizimen"
+    },
+    {
+        "city": "广州",
+        "code": "SPQ",
+        "cityTrain": "石牌",
+        "cityTrainPin": "Shipai"
+    },
+    {
+        "city": "韶关",
+        "code": "IPQ",
+        "cityTrain": "始兴",
+        "cityTrainPin": "Shixing"
+    },
+    {
+        "city": "江门",
+        "code": "PQQ",
+        "cityTrain": "双水镇",
+        "cityTrainPin": "Shuangshuizhen"
+    },
+    {
+        "city": "佛山",
+        "code": "ORQ",
+        "cityTrain": "顺德",
+        "cityTrainPin": "Shunde"
+    },
+    {
+        "city": "佛山",
+        "code": "SVA",
+        "cityTrain": "顺德北",
+        "cityTrainPin": "Shundebei"
+    },
+    {
+        "city": "佛山",
+        "code": "OJQ",
+        "cityTrain": "顺德学院",
+        "cityTrainPin": "Shundexueyuan"
+    },
+    {
+        "city": "肇庆",
+        "code": "AHQ",
+        "cityTrain": "四会",
+        "cityTrainPin": "SiHui"
+    },
+    {
+        "city": "东莞",
+        "code": "KUQ",
+        "cityTrain": "松山湖北",
+        "cityTrainPin": "Songshanhubei"
+    },
+    {
+        "city": "湛江",
+        "code": "SXZ",
+        "cityTrain": "遂溪",
+        "cityTrainPin": "Suixi"
+    },
+    {
+        "city": "江门",
+        "code": "PUQ",
+        "cityTrain": "台山",
+        "cityTrainPin": "Taishan"
+    },
+    {
+        "city": "珠海",
+        "code": "PDQ",
+        "cityTrain": "唐家湾",
+        "cityTrainPin": "Tangjiawan"
+    },
+    {
+        "city": "珠海",
+        "code": "WZA",
+        "cityTrain": "湾仔",
+        "cityTrainPin": "Wanzai"
+    },
+    {
+        "city": "珠海",
+        "code": "WBA",
+        "cityTrain": "湾仔北",
+        "cityTrainPin": "Wanzaibei"
+    },
+    {
+        "city": "东莞",
+        "code": "WNA",
+        "cityTrain": "望牛墩",
+        "cityTrainPin": "Wangniudun"
+    },
+    {
+        "city": "湛江",
+        "code": "WAQ",
+        "cityTrain": "吴川",
+        "cityTrainPin": "Wuchuan"
+    },
+    {
+        "city": "梅州",
+        "code": "WHA",
+        "cityTrain": "五华",
+        "cityTrainPin": "Wuhua"
+    },
+    {
+        "city": "惠州",
+        "code": "WDQ",
+        "cityTrain": "西湖东",
+        "cityTrainPin": "XiHuDong"
+    },
+    {
+        "city": "东莞",
+        "code": "EGQ",
+        "cityTrain": "西平西",
+        "cityTrainPin": "Xipingxi"
+    },
+    {
+        "city": "惠州",
+        "code": "NKQ",
+        "cityTrain": "小金口",
+        "cityTrainPin": "XiaoJinKou"
+    },
+    {
+        "city": "中山",
+        "code": "EAQ",
+        "cityTrain": "小榄",
+        "cityTrainPin": "Xiaolan"
+    },
+    {
+        "city": "江门",
+        "code": "EFQ",
+        "cityTrain": "新会",
+        "cityTrainPin": "Xinhui"
+    },
+    {
+        "city": "广州",
+        "code": "XWQ",
+        "cityTrain": "新塘",
+        "cityTrainPin": "Xintang"
+    },
+    {
+        "city": "广州",
+        "code": "NUQ",
+        "cityTrain": "新塘南",
+        "cityTrainPin": "xintangnan"
+    },
+    {
+        "city": "云浮",
+        "code": "XGQ",
+        "cityTrain": "新兴县",
+        "cityTrainPin": "Xinxingxian"
+    },
+    {
+        "city": "茂名",
+        "code": "EEQ",
+        "cityTrain": "信宜",
+        "cityTrainPin": "Xinyi"
+    },
+    {
+        "city": "梅州",
+        "code": "ENQ",
+        "cityTrain": "兴宁",
+        "cityTrainPin": "Xingning"
+    },
+    {
+        "city": "梅州",
+        "code": "XNA",
+        "cityTrain": "兴宁南",
+        "cityTrainPin": "Xingningnan"
+    },
+    {
+        "city": "湛江",
+        "code": "XJQ",
+        "cityTrain": "徐闻",
+        "cityTrainPin": "Xuwen"
+    },
+    {
+        "city": "阳江",
+        "code": "YQQ",
+        "cityTrain": "阳春",
+        "cityTrainPin": "Yangchun"
+    },
+    {
+        "city": "阳江",
+        "code": "WLQ",
+        "cityTrain": "阳东",
+        "cityTrainPin": "Yangdong"
+    },
+    {
+        "city": "阳江",
+        "code": "WRQ",
+        "cityTrain": "阳江",
+        "cityTrainPin": "Yangjiang"
+    },
+    {
+        "city": "阳江",
+        "code": "WMQ",
+        "cityTrain": "阳西",
+        "cityTrainPin": "Yangxi"
+    },
+    {
+        "city": "东莞",
+        "code": "KPQ",
+        "cityTrain": "银瓶",
+        "cityTrainPin": "YinPing"
+    },
+    {
+        "city": "清远",
+        "code": "YZA",
+        "cityTrain": "银盏",
+        "cityTrainPin": "Yinzhan"
+    },
+    {
+        "city": "清远",
+        "code": "YDQ",
+        "cityTrain": "英德",
+        "cityTrainPin": "Yingde"
+    },
+    {
+        "city": "清远",
+        "code": "IIQ",
+        "cityTrain": "英德西",
+        "cityTrainPin": "Yingdexi"
+    },
+    {
+        "city": "云浮",
+        "code": "YKQ",
+        "cityTrain": "郁南",
+        "cityTrainPin": "Yunan"
+    },
+    {
+        "city": "清远",
+        "code": "YTQ",
+        "cityTrain": "源潭",
+        "cityTrainPin": "Yuantan"
+    },
+    {
+        "city": "佛山",
+        "code": "NAQ",
+        "cityTrain": "云东海",
+        "cityTrainPin": "YunDongHai"
+    },
+    {
+        "city": "云浮",
+        "code": "IXQ",
+        "cityTrain": "云浮东",
+        "cityTrainPin": "Yunfudong"
+    },
+    {
+        "city": "惠州",
+        "code": "KZQ",
+        "cityTrain": "云山",
+        "cityTrainPin": "YunShan"
+    },
+    {
+        "city": "广州",
+        "code": "ZCA",
+        "cityTrain": "增城",
+        "cityTrainPin": "Zengcheng"
+    },
+    {
+        "city": "湛江",
+        "code": "ZJZ",
+        "cityTrain": "湛江",
+        "cityTrainPin": "Zhanjiang"
+    },
+    {
+        "city": "湛江",
+        "code": "ZWQ",
+        "cityTrain": "湛江西",
+        "cityTrainPin": "Zhanjiangxi"
+    },
+    {
+        "city": "佛山",
+        "code": "ZAA",
+        "cityTrain": "张槎",
+        "cityTrainPin": "Zhangcha"
+    },
+    {
+        "city": "东莞",
+        "code": "ZOQ",
+        "cityTrain": "樟木头",
+        "cityTrainPin": "Zhangmutou"
+    },
+    {
+        "city": "东莞",
+        "code": "ZRQ",
+        "cityTrain": "樟木头东",
+        "cityTrainPin": "ZhangMuTouDong"
+    },
+    {
+        "city": "东莞",
+        "code": "CAA",
+        "cityTrain": "长安",
+        "cityTrainPin": "Changan"
+    },
+    {
+        "city": "东莞",
+        "code": "CXA",
+        "cityTrain": "长安西",
+        "cityTrainPin": "Changanxi"
+    },
+    {
+        "city": "肇庆",
+        "code": "FCQ",
+        "cityTrain": "肇庆东",
+        "cityTrainPin": "Zhaoqingdong"
+    },
+    {
+        "city": "中山",
+        "code": "ZSQ",
+        "cityTrain": "中山",
+        "cityTrainPin": "Zhongshan"
+    },
+    {
+        "city": "中山",
+        "code": "ZGQ",
+        "cityTrain": "中山北",
+        "cityTrainPin": "Zhongshanbei"
+    },
+    {
+        "city": "东莞",
+        "code": "ZTA",
+        "cityTrain": "中堂",
+        "cityTrainPin": "Zhongtang"
+    },
+    {
+        "city": "惠州",
+        "code": "ZKA",
+        "cityTrain": "仲恺",
+        "cityTrainPin": "Zhongkai"
+    },
+    {
+        "city": "珠海",
+        "code": "ZHQ",
+        "cityTrain": "珠海",
+        "cityTrainPin": "Zhuhai"
+    },
+    {
+        "city": "珠海",
+        "code": "ZIQ",
+        "cityTrain": "珠海北",
+        "cityTrainPin": "Zhuhaibei"
+    },
+    {
+        "city": "珠海",
+        "code": "ZJA",
+        "cityTrain": "珠海机场",
+        "cityTrainPin": "Zhuhaijichang"
+    },
+    {
+        "city": "珠海",
+        "code": "ZLA",
+        "cityTrain": "珠海长隆",
+        "cityTrainPin": "Zhuhaichanglong"
+    },
+    {
+        "city": "句容",
+        "code": "BWH",
+        "cityTrain": "宝华山",
+        "cityTrainPin": "Baohuashan"
+    },
+    {
+        "city": "扬州",
+        "code": "BAU",
+        "cityTrain": "宝应",
+        "cityTrainPin": "Baoying"
+    },
+    {
+        "city": "南通",
+        "code": "FWH",
+        "cityTrain": "栟茶",
+        "cityTrainPin": "Bencha"
+    },
+    {
+        "city": "盐城",
+        "code": "BGU",
+        "cityTrain": "滨海港",
+        "cityTrainPin": "Binhaigang"
+    },
+    {
+        "city": "苏州",
+        "code": "CAU",
+        "cityTrain": "常熟",
+        "cityTrainPin": "Changshu"
+    },
+    {
+        "city": "常州",
+        "code": "CZH",
+        "cityTrain": "常州",
+        "cityTrainPin": "Changzhou"
+    },
+    {
+        "city": "常州",
+        "code": "ESH",
+        "cityTrain": "常州北",
+        "cityTrainPin": "Changzhoubei"
+    },
+    {
+        "city": "镇江",
+        "code": "DNU",
+        "cityTrain": "大港南",
+        "cityTrainPin": "Dagangnan"
+    },
+    {
+        "city": "镇江",
+        "code": "RUH",
+        "cityTrain": "丹徒",
+        "cityTrainPin": "Dantu"
+    },
+    {
+        "city": "丹阳",
+        "code": "DYH",
+        "cityTrain": "丹阳",
+        "cityTrainPin": "Danyang"
+    },
+    {
+        "city": "丹阳",
+        "code": "EXH",
+        "cityTrain": "丹阳北",
+        "cityTrainPin": "Danyangbei"
+    },
+    {
+        "city": "连云港",
+        "code": "DQH",
+        "cityTrain": "东海县",
+        "cityTrainPin": "Donghaixian"
+    },
+    {
+        "city": "盐城",
+        "code": "DBH",
+        "cityTrain": "东台",
+        "cityTrainPin": "Dongtai"
+    },
+    {
+        "city": "盐城",
+        "code": "AKH",
+        "cityTrain": "阜宁",
+        "cityTrainPin": "Funing"
+    },
+    {
+        "city": "盐城",
+        "code": "FDU",
+        "cityTrain": "阜宁东",
+        "cityTrainPin": "Funingdong"
+    },
+    {
+        "city": "盐城",
+        "code": "FNU",
+        "cityTrain": "阜宁南",
+        "cityTrainPin": "Funingnan"
+    },
+    {
+        "city": "连云港",
+        "code": "GYU",
+        "cityTrain": "赣榆",
+        "cityTrainPin": "Ganyu"
+    },
+    {
+        "city": "扬州",
+        "code": "GAU",
+        "cityTrain": "高邮",
+        "cityTrainPin": "Gaoyou"
+    },
+    {
+        "city": "扬州",
+        "code": "GEU",
+        "cityTrain": "高邮北",
+        "cityTrainPin": "Gaoyoubei"
+    },
+    {
+        "city": "徐州",
+        "code": "GCU",
+        "cityTrain": "观音机场",
+        "cityTrainPin": "Guanyinjichang"
+    },
+    {
+        "city": "连云港",
+        "code": "GIU",
+        "cityTrain": "灌南",
+        "cityTrainPin": "Guannan"
+    },
+    {
+        "city": "连云港",
+        "code": "GOU",
+        "cityTrain": "灌云",
+        "cityTrainPin": "Guanyun"
+    },
+    {
+        "city": "南通",
+        "code": "HIH",
+        "cityTrain": "海安",
+        "cityTrainPin": "Hai'an"
+    },
+    {
+        "city": "南通",
+        "code": "HMU",
+        "cityTrain": "海门",
+        "cityTrainPin": "Haimen"
+    },
+    {
+        "city": "昆山",
+        "code": "VQH",
+        "cityTrain": "花桥",
+        "cityTrainPin": "Huaqiao"
+    },
+    {
+        "city": "淮安",
+        "code": "AUH",
+        "cityTrain": "淮安",
+        "cityTrainPin": "Huai'an"
+    },
+    {
+        "city": "淮安",
+        "code": "HAU",
+        "cityTrain": "淮安东",
+        "cityTrainPin": "Huaiandong"
+    },
+    {
+        "city": "淮安",
+        "code": "AMH",
+        "cityTrain": "淮安南",
+        "cityTrainPin": "Huai'annan"
+    },
+    {
+        "city": "无锡",
+        "code": "VCH",
+        "cityTrain": "惠山",
+        "cityTrainPin": "Huishan"
+    },
+    {
+        "city": "盐城",
+        "code": "AJH",
+        "cityTrain": "建湖",
+        "cityTrainPin": "Jianhu"
+    },
+    {
+        "city": "扬州",
+        "code": "UDH",
+        "cityTrain": "江都",
+        "cityTrainPin": "Jiangdu"
+    },
+    {
+        "city": "南京",
+        "code": "JJH",
+        "cityTrain": "江宁",
+        "cityTrainPin": "Jiangning"
+    },
+    {
+        "city": "南京",
+        "code": "OKH",
+        "cityTrain": "江宁西",
+        "cityTrainPin": "Jiangningxi"
+    },
+    {
+        "city": "无锡",
+        "code": "KYH",
+        "cityTrain": "江阴",
+        "cityTrainPin": "Jiangyin"
+    },
+    {
+        "city": "泰州",
+        "code": "UEH",
+        "cityTrain": "姜堰",
+        "cityTrainPin": "Jiangyan"
+    },
+    {
+        "city": "常州",
+        "code": "JTU",
+        "cityTrain": "金坛",
+        "cityTrainPin": "Jintan"
+    },
+    {
+        "city": "镇江",
+        "code": "JRU",
+        "cityTrain": "句容",
+        "cityTrainPin": "Jurong"
+    },
+    {
+        "city": "句容",
+        "code": "JWH",
+        "cityTrain": "句容西",
+        "cityTrainPin": "Jurongxi"
+    },
+    {
+        "city": "昆山",
+        "code": "KSH",
+        "cityTrain": "昆山",
+        "cityTrainPin": "Kunshan"
+    },
+    {
+        "city": "昆山",
+        "code": "KNH",
+        "cityTrain": "昆山南",
+        "cityTrainPin": "Kunshannan"
+    },
+    {
+        "city": "南京",
+        "code": "LDH",
+        "cityTrain": "溧水",
+        "cityTrainPin": "Lishui"
+    },
+    {
+        "city": "常州",
+        "code": "LEH",
+        "cityTrain": "溧阳",
+        "cityTrainPin": "Liyang"
+    },
+    {
+        "city": "连云港",
+        "code": "UIH",
+        "cityTrain": "连云港",
+        "cityTrainPin": "Lianyungang"
+    },
+    {
+        "city": "连云港",
+        "code": "UKH",
+        "cityTrain": "连云港东",
+        "cityTrainPin": "Lianyungangdong"
+    },
+    {
+        "city": "淮安",
+        "code": "LIU",
+        "cityTrain": "涟水",
+        "cityTrainPin": "Lianshui"
+    },
+    {
+        "city": "南京",
+        "code": "KLH",
+        "cityTrain": "六合",
+        "cityTrainPin": "Liuhe"
+    },
+    {
+        "city": "南京",
+        "code": "NJH",
+        "cityTrain": "南京",
+        "cityTrainPin": "Nanjing"
+    },
+    {
+        "city": "南京",
+        "code": "NKH",
+        "cityTrain": "南京南",
+        "cityTrainPin": "Nanjingnan"
+    },
+    {
+        "city": "南通",
+        "code": "NUH",
+        "cityTrain": "南通",
+        "cityTrainPin": "Nantong"
+    },
+    {
+        "city": "南通",
+        "code": "NXU",
+        "cityTrain": "南通西",
+        "cityTrainPin": "Nantongxi"
+    },
+    {
+        "city": "徐州",
+        "code": "PJH",
+        "cityTrain": "邳州",
+        "cityTrainPin": "Pizhou"
+    },
+    {
+        "city": "徐州",
+        "code": "PIU",
+        "cityTrain": "邳州东",
+        "cityTrainPin": "Pizhoudong"
+    },
+    {
+        "city": "常州",
+        "code": "QYH",
+        "cityTrain": "戚墅堰",
+        "cityTrainPin": "Qishuyan"
+    },
+    {
+        "city": "南通",
+        "code": "QOU",
+        "cityTrain": "启东",
+        "cityTrainPin": "Qidong"
+    },
+    {
+        "city": "南通",
+        "code": "RIH",
+        "cityTrain": "如东",
+        "cityTrainPin": "Rudong"
+    },
+    {
+        "city": "南通",
+        "code": "RBH",
+        "cityTrain": "如皋",
+        "cityTrainPin": "Rugao"
+    },
+    {
+        "city": "南通",
+        "code": "RNU",
+        "cityTrain": "如皋南",
+        "cityTrainPin": "Rugaonan"
+    },
+    {
+        "city": "盐城",
+        "code": "SAU",
+        "cityTrain": "射阳",
+        "cityTrainPin": "Sheyang"
+    },
+    {
+        "city": "苏州",
+        "code": "SJU",
+        "cityTrain": "盛泽",
+        "cityTrainPin": "Shengze"
+    },
+    {
+        "city": "宿迁",
+        "code": "FMH",
+        "cityTrain": "沭阳",
+        "cityTrainPin": "Shuyang"
+    },
+    {
+        "city": "宿迁",
+        "code": "GQH",
+        "cityTrain": "泗洪",
+        "cityTrainPin": "Sihong"
+    },
+    {
+        "city": "宿迁",
+        "code": "MPH",
+        "cityTrain": "泗阳",
+        "cityTrainPin": "Siyang"
+    },
+    {
+        "city": "苏州",
+        "code": "SZH",
+        "cityTrain": "苏州",
+        "cityTrainPin": "Suzhou"
+    },
+    {
+        "city": "苏州",
+        "code": "OHH",
+        "cityTrain": "苏州北",
+        "cityTrainPin": "Suzhoubei"
+    },
+    {
+        "city": "苏州",
+        "code": "SMU",
+        "cityTrain": "苏州南",
+        "cityTrainPin": "Suzhounan"
+    },
+    {
+        "city": "苏州",
+        "code": "ITH",
+        "cityTrain": "苏州新区",
+        "cityTrainPin": "Suzhouxinqu"
+    },
+    {
+        "city": "苏州",
+        "code": "KAH",
+        "cityTrain": "苏州园区",
+        "cityTrainPin": "Suzhouyuanqu"
+    },
+    {
+        "city": "宿迁",
+        "code": "SQU",
+        "cityTrain": "宿迁",
+        "cityTrainPin": "Suqian"
+    },
+    {
+        "city": "徐州",
+        "code": "SNU",
+        "cityTrain": "睢宁",
+        "cityTrainPin": "Suining"
+    },
+    {
+        "city": "苏州",
+        "code": "TCU",
+        "cityTrain": "太仓",
+        "cityTrainPin": "Taicang"
+    },
+    {
+        "city": "苏州",
+        "code": "TNU",
+        "cityTrain": "太仓南",
+        "cityTrainPin": "Taicangnan"
+    },
+    {
+        "city": "泰州",
+        "code": "UTH",
+        "cityTrain": "泰州",
+        "cityTrainPin": "Taizhou"
+    },
+    {
+        "city": "常州",
+        "code": "WAH",
+        "cityTrain": "瓦屋山",
+        "cityTrainPin": "Wawushan"
+    },
+    {
+        "city": "无锡",
+        "code": "WXH",
+        "cityTrain": "无锡",
+        "cityTrainPin": "Wuxi"
+    },
+    {
+        "city": "无锡",
+        "code": "WGH",
+        "cityTrain": "无锡东",
+        "cityTrainPin": "Wuxidong"
+    },
+    {
+        "city": "无锡",
+        "code": "IFH",
+        "cityTrain": "无锡新区",
+        "cityTrainPin": "Wuxixinqu"
+    },
+    {
+        "city": "常州",
+        "code": "WJU",
+        "cityTrain": "武进",
+        "cityTrainPin": "Wujin"
+    },
+    {
+        "city": "南京",
+        "code": "XPH",
+        "cityTrain": "仙林",
+        "cityTrainPin": "Xianlin"
+    },
+    {
+        "city": "盐城",
+        "code": "XSU",
+        "cityTrain": "响水县",
+        "cityTrainPin": "Xiangshuixian"
+    },
+    {
+        "city": "徐州",
+        "code": "VIH",
+        "cityTrain": "新沂",
+        "cityTrainPin": "Xinyi"
+    },
+    {
+        "city": "徐州",
+        "code": "XYU",
+        "cityTrain": "新沂南",
+        "cityTrainPin": "Xinyinan"
+    },
+    {
+        "city": "徐州",
+        "code": "XCH",
+        "cityTrain": "徐州",
+        "cityTrainPin": "Xuzhou"
+    },
+    {
+        "city": "徐州",
+        "code": "UUH",
+        "cityTrain": "徐州东",
+        "cityTrainPin": "Xuzhoudong"
+    },
+    {
+        "city": "盐城",
+        "code": "AFH",
+        "cityTrain": "盐城",
+        "cityTrainPin": "Yancheng"
+    },
+    {
+        "city": "盐城",
+        "code": "AEH",
+        "cityTrain": "盐城北",
+        "cityTrainPin": "Yanchengbei"
+    },
+    {
+        "city": "盐城",
+        "code": "YFU",
+        "cityTrain": "盐城大丰",
+        "cityTrainPin": "Yanchengdafeng"
+    },
+    {
+        "city": "扬州",
+        "code": "YLH",
+        "cityTrain": "扬州",
+        "cityTrainPin": "Yangzhou"
+    },
+    {
+        "city": "扬州",
+        "code": "YDU",
+        "cityTrain": "扬州东",
+        "cityTrainPin": "Yangzhoudong"
+    },
+    {
+        "city": "昆山",
+        "code": "AIH",
+        "cityTrain": "阳澄湖",
+        "cityTrainPin": "Yangchenghu"
+    },
+    {
+        "city": "宿迁",
+        "code": "GTH",
+        "cityTrain": "洋河",
+        "cityTrainPin": "Yanghe"
+    },
+    {
+        "city": "仪征",
+        "code": "UZH",
+        "cityTrain": "仪征",
+        "cityTrainPin": "Yizheng"
+    },
+    {
+        "city": "无锡",
+        "code": "YUH",
+        "cityTrain": "宜兴",
+        "cityTrainPin": "Yixing"
+    },
+    {
+        "city": "苏州",
+        "code": "ZAU",
+        "cityTrain": "张家港",
+        "cityTrainPin": "Zhangjiagang"
+    },
+    {
+        "city": "镇江",
+        "code": "ZJH",
+        "cityTrain": "镇江",
+        "cityTrainPin": "Zhenjiang"
+    },
+    {
+        "city": "镇江",
+        "code": "ZEH",
+        "cityTrain": "镇江南",
+        "cityTrainPin": "Zhenjiangnan"
+    },
+    {
+        "city": "南京",
+        "code": "VNH",
+        "cityTrain": "中华门",
+        "cityTrainPin": "Zhonghuamen"
+    },
+    {
+        "city": "上海",
+        "code": "ASH",
+        "cityTrain": "安亭北",
+        "cityTrainPin": "Antingbei"
+    },
+    {
+        "city": "上海",
+        "code": "AXU",
+        "cityTrain": "安亭西",
+        "cityTrainPin": "Antingxi"
+    },
+    {
+        "city": "上海",
+        "code": "RWH",
+        "cityTrain": "海湾",
+        "cityTrainPin": "Haiwan"
+    },
+    {
+        "city": "上海",
+        "code": "EGH",
+        "cityTrain": "金山北",
+        "cityTrainPin": "Jinshanbei"
+    },
+    {
+        "city": "上海",
+        "code": "LTU",
+        "cityTrain": "练塘",
+        "cityTrainPin": "Liantang"
+    },
+    {
+        "city": "上海",
+        "code": "UCH",
+        "cityTrain": "芦潮港",
+        "cityTrainPin": "Luchaogang"
+    },
+    {
+        "city": "上海",
+        "code": "NEH",
+        "cityTrain": "南翔北",
+        "cityTrainPin": "Nanxiangbei"
+    },
+    {
+        "city": "上海",
+        "code": "SHH",
+        "cityTrain": "上海",
+        "cityTrainPin": "Shanghai"
+    },
+    {
+        "city": "上海",
+        "code": "AOH",
+        "cityTrain": "上海虹桥",
+        "cityTrainPin": "Shanghaihongqiao"
+    },
+    {
+        "city": "上海",
+        "code": "SNH",
+        "cityTrain": "上海南",
+        "cityTrainPin": "Shanghainan"
+    },
+    {
+        "city": "上海",
+        "code": "IMH",
+        "cityTrain": "上海松江",
+        "cityTrainPin": "Shanghaisongjiang"
+    },
+    {
+        "city": "上海",
+        "code": "SXH",
+        "cityTrain": "上海西",
+        "cityTrainPin": "Shanghaixi"
+    },
+    {
+        "city": "上海",
+        "code": "SAH",
+        "cityTrain": "松江北",
+        "cityTrainPin": "Songjiangbei"
+    },
+    {
+        "city": "天津",
+        "code": "BZI",
+        "cityTrain": "宝坻",
+        "cityTrainPin": "Baodi"
+    },
+    {
+        "city": "天津",
+        "code": "BPP",
+        "cityTrain": "宝坻北",
+        "cityTrainPin": "Baodibei"
+    },
+    {
+        "city": "天津",
+        "code": "BOI",
+        "cityTrain": "宝坻南",
+        "cityTrainPin": "Baodinan"
+    },
+    {
+        "city": "天津",
+        "code": "BII",
+        "cityTrain": "北辰",
+        "cityTrainPin": "Beichen"
+    },
+    {
+        "city": "天津",
+        "code": "YKP",
+        "cityTrain": "滨海",
+        "cityTrainPin": "Binhai"
+    },
+    {
+        "city": "天津",
+        "code": "FCP",
+        "cityTrain": "滨海北",
+        "cityTrainPin": "Binhaibei"
+    },
+    {
+        "city": "天津",
+        "code": "FHP",
+        "cityTrain": "滨海西",
+        "cityTrainPin": "Binhaixi"
+    },
+    {
+        "city": "天津",
+        "code": "HGP",
+        "cityTrain": "汉沽",
+        "cityTrainPin": "Hangu"
+    },
+    {
+        "city": "天津",
+        "code": "JIP",
+        "cityTrain": "蓟州",
+        "cityTrainPin": "Jizhou"
+    },
+    {
+        "city": "天津",
+        "code": "JKP",
+        "cityTrain": "蓟州北",
+        "cityTrainPin": "Jizhoubei"
+    },
+    {
+        "city": "天津",
+        "code": "JHP",
+        "cityTrain": "静海",
+        "cityTrainPin": "Jinghai"
+    },
+    {
+        "city": "天津",
+        "code": "JMP",
+        "cityTrain": "军粮城北",
+        "cityTrainPin": "Junliangchengbei"
+    },
+    {
+        "city": "天津",
+        "code": "LTP",
+        "cityTrain": "芦台",
+        "cityTrainPin": "Lutai"
+    },
+    {
+        "city": "天津",
+        "code": "TGP",
+        "cityTrain": "塘沽",
+        "cityTrainPin": "Tanggu"
+    },
+    {
+        "city": "天津",
+        "code": "TJP",
+        "cityTrain": "天津",
+        "cityTrainPin": "Tianjin"
+    },
+    {
+        "city": "天津",
+        "code": "TBP",
+        "cityTrain": "天津北",
+        "cityTrainPin": "Tianjinbei"
+    },
+    {
+        "city": "天津",
+        "code": "TIP",
+        "cityTrain": "天津南",
+        "cityTrainPin": "Tianjinnan"
+    },
+    {
+        "city": "天津",
+        "code": "TXP",
+        "cityTrain": "天津西",
+        "cityTrainPin": "Tianjinxi"
+    },
+    {
+        "city": "天津",
+        "code": "WWP",
+        "cityTrain": "武清",
+        "cityTrainPin": "Wuqing"
+    },
+    {
+        "city": "天津",
+        "code": "YBP",
+        "cityTrain": "杨村",
+        "cityTrainPin": "Yangcun"
+    },
+    {
+        "city": "天津",
+        "code": "YQP",
+        "cityTrain": "杨柳青",
+        "cityTrainPin": "Yangliuqing"
+    },
+    {
+        "city": "湖州",
+        "code": "AJU",
+        "cityTrain": "安吉",
+        "cityTrainPin": "Anji"
+    },
+    {
+        "city": "温州",
+        "code": "CEH",
+        "cityTrain": "苍南",
+        "cityTrainPin": "Cangnan"
+    },
+    {
+        "city": "衢州",
+        "code": "CSU",
+        "cityTrain": "常山",
+        "cityTrainPin": "Changshan"
+    },
+    {
+        "city": "德清",
+        "code": "DRH",
+        "cityTrain": "德清",
+        "cityTrainPin": "Deqing"
+    },
+    {
+        "city": "德清",
+        "code": "MOH",
+        "cityTrain": "德清西",
+        "cityTrainPin": "Deqingxi"
+    },
+    {
+        "city": "金华",
+        "code": "DIU",
+        "cityTrain": "东阳北",
+        "cityTrainPin": "Dongyangbei"
+    },
+    {
+        "city": "台州",
+        "code": "DQU",
+        "cityTrain": "杜桥",
+        "cityTrainPin": "Duqiao"
+    },
+    {
+        "city": "宁波",
+        "code": "FHH",
+        "cityTrain": "奉化",
+        "cityTrainPin": "Fenghua"
+    },
+    {
+        "city": "杭州",
+        "code": "FYU",
+        "cityTrain": "富阳",
+        "cityTrainPin": "Fuyang"
+    },
+    {
+        "city": "杭州",
+        "code": "FUU",
+        "cityTrain": "富阳西",
+        "cityTrainPin": "Fuyangxi"
+    },
+    {
+        "city": "海宁",
+        "code": "HNH",
+        "cityTrain": "海宁",
+        "cityTrainPin": "Haining"
+    },
+    {
+        "city": "海宁",
+        "code": "EUH",
+        "cityTrain": "海宁西",
+        "cityTrainPin": "Hainingxi"
+    },
+    {
+        "city": "杭州",
+        "code": "HZH",
+        "cityTrain": "杭州",
+        "cityTrainPin": "Hangzhou"
+    },
+    {
+        "city": "杭州",
+        "code": "HGH",
+        "cityTrain": "杭州东",
+        "cityTrainPin": "Hangzhoudong"
+    },
+    {
+        "city": "杭州",
+        "code": "XHH",
+        "cityTrain": "杭州南",
+        "cityTrainPin": "Hangzhounan"
+    },
+    {
+        "city": "杭州",
+        "code": "HVU",
+        "cityTrain": "杭州西",
+        "cityTrainPin": "Hangzhouxi"
+    },
+    {
+        "city": "金华",
+        "code": "HJU",
+        "cityTrain": "横店",
+        "cityTrainPin": "Hengdian"
+    },
+    {
+        "city": "丽水",
+        "code": "HUU",
+        "cityTrain": "壶镇",
+        "cityTrainPin": "Huzhen"
+    },
+    {
+        "city": "湖州",
+        "code": "VZH",
+        "cityTrain": "湖州",
+        "cityTrainPin": "Huzhou"
+    },
+    {
+        "city": "湖州",
+        "code": "HKU",
+        "cityTrain": "湖州东",
+        "cityTrainPin": "Huzhoudong"
+    },
+    {
+        "city": "湖州",
+        "code": "KIU",
+        "cityTrain": "湖州南浔",
+        "cityTrainPin": "Huzhounanxun"
+    },
+    {
+        "city": "嘉善",
+        "code": "JSH",
+        "cityTrain": "嘉善",
+        "cityTrainPin": "Jiashan"
+    },
+    {
+        "city": "嘉善",
+        "code": "EAH",
+        "cityTrain": "嘉善南",
+        "cityTrainPin": "Jiashannan"
+    },
+    {
+        "city": "嘉兴",
+        "code": "JXH",
+        "cityTrain": "嘉兴",
+        "cityTrainPin": "Jiaxing"
+    },
+    {
+        "city": "嘉兴",
+        "code": "EPH",
+        "cityTrain": "嘉兴南",
+        "cityTrainPin": "Jiaxingnan"
+    },
+    {
+        "city": "杭州",
+        "code": "JDU",
+        "cityTrain": "建德",
+        "cityTrainPin": "Jiande"
+    },
+    {
+        "city": "衢州",
+        "code": "JUH",
+        "cityTrain": "江山",
+        "cityTrainPin": "Jiangshan"
+    },
+    {
+        "city": "金华",
+        "code": "JBH",
+        "cityTrain": "金华",
+        "cityTrainPin": "Jinhua"
+    },
+    {
+        "city": "金华",
+        "code": "RNH",
+        "cityTrain": "金华南",
+        "cityTrainPin": "Jinhuanan"
+    },
+    {
+        "city": "缙云",
+        "code": "JYH",
+        "cityTrain": "缙云",
+        "cityTrainPin": "Jinyun"
+    },
+    {
+        "city": "缙云",
+        "code": "PYH",
+        "cityTrain": "缙云西",
+        "cityTrainPin": "Jinyunxi"
+    },
+    {
+        "city": "衢州",
+        "code": "KHU",
+        "cityTrain": "开化",
+        "cityTrainPin": "Kaihua"
+    },
+    {
+        "city": "金华",
+        "code": "LWH",
+        "cityTrain": "兰溪",
+        "cityTrainPin": "Lanxi"
+    },
+    {
+        "city": "乐清",
+        "code": "UPH",
+        "cityTrain": "乐清",
+        "cityTrainPin": "Yueqing"
+    },
+    {
+        "city": "乐清",
+        "code": "OLH",
+        "cityTrain": "乐清东",
+        "cityTrainPin": "Yueqingdong"
+    },
+    {
+        "city": "丽水",
+        "code": "USH",
+        "cityTrain": "丽水",
+        "cityTrainPin": "Lishui"
+    },
+    {
+        "city": "台州",
+        "code": "UFH",
+        "cityTrain": "临海",
+        "cityTrainPin": "Linhai"
+    },
+    {
+        "city": "台州",
+        "code": "LHU",
+        "cityTrain": "临海南",
+        "cityTrainPin": "Linhainan"
+    },
+    {
+        "city": "杭州",
+        "code": "EVH",
+        "cityTrain": "临平南",
+        "cityTrainPin": "Linpingnan"
+    },
+    {
+        "city": "丽水",
+        "code": "LVU",
+        "cityTrain": "龙泉市",
+        "cityTrainPin": "Longquanshi"
+    },
+    {
+        "city": "衢州",
+        "code": "LMH",
+        "cityTrain": "龙游",
+        "cityTrainPin": "Longyou"
+    },
+    {
+        "city": "衢州",
+        "code": "LYU",
+        "cityTrain": "龙游南",
+        "cityTrainPin": "Longyounan"
+    },
+    {
+        "city": "温州",
+        "code": "NJU",
+        "cityTrain": "楠溪江",
+        "cityTrainPin": "Nanxijiang"
+    },
+    {
+        "city": "宁波",
+        "code": "NGH",
+        "cityTrain": "宁波",
+        "cityTrainPin": "Ningbo"
+    },
+    {
+        "city": "宁波",
+        "code": "NVH",
+        "cityTrain": "宁波东",
+        "cityTrainPin": "Ningbodong"
+    },
+    {
+        "city": "宁波",
+        "code": "NHH",
+        "cityTrain": "宁海",
+        "cityTrainPin": "Ninghai"
+    },
+    {
+        "city": "金华",
+        "code": "PAU",
+        "cityTrain": "磐安",
+        "cityTrainPin": "Pan'an"
+    },
+    {
+        "city": "金华",
+        "code": "PNU",
+        "cityTrain": "磐安南",
+        "cityTrainPin": "Panannan"
+    },
+    {
+        "city": "温州",
+        "code": "ARH",
+        "cityTrain": "平阳",
+        "cityTrainPin": "Pingyang"
+    },
+    {
+        "city": "金华",
+        "code": "PJU",
+        "cityTrain": "浦江",
+        "cityTrainPin": "Pujiang"
+    },
+    {
+        "city": "杭州",
+        "code": "QDU",
+        "cityTrain": "千岛湖",
+        "cityTrainPin": "Qiandaohu"
+    },
+    {
+        "city": "丽水",
+        "code": "QVH",
+        "cityTrain": "青田",
+        "cityTrainPin": "Qingtian"
+    },
+    {
+        "city": "丽水",
+        "code": "QYU",
+        "cityTrain": "庆元",
+        "cityTrainPin": "qingyuan"
+    },
+    {
+        "city": "衢州",
+        "code": "QEH",
+        "cityTrain": "衢州",
+        "cityTrainPin": "Quzhou"
+    },
+    {
+        "city": "温州",
+        "code": "RAH",
+        "cityTrain": "瑞安",
+        "cityTrainPin": "Rui'an"
+    },
+    {
+        "city": "台州",
+        "code": "OQH",
+        "cityTrain": "三门县",
+        "cityTrainPin": "Sanmenxian"
+    },
+    {
+        "city": "绍兴",
+        "code": "BDH",
+        "cityTrain": "上虞",
+        "cityTrainPin": "Shangyu"
+    },
+    {
+        "city": "绍兴",
+        "code": "SVU",
+        "cityTrain": "上虞南",
+        "cityTrainPin": "Shangyunan"
+    },
+    {
+        "city": "绍兴",
+        "code": "SOH",
+        "cityTrain": "绍兴",
+        "cityTrainPin": "Shaoxing"
+    },
+    {
+        "city": "绍兴",
+        "code": "SLH",
+        "cityTrain": "绍兴北",
+        "cityTrainPin": "Shaoxingbei"
+    },
+    {
+        "city": "绍兴",
+        "code": "SSH",
+        "cityTrain": "绍兴东",
+        "cityTrainPin": "Shaoxingdong"
+    },
+    {
+        "city": "绍兴",
+        "code": "SEU",
+        "cityTrain": "嵊州北",
+        "cityTrainPin": "Shengzhoubei"
+    },
+    {
+        "city": "绍兴",
+        "code": "SKU",
+        "cityTrain": "嵊州新昌",
+        "cityTrainPin": "Shengzhouxinchang"
+    },
+    {
+        "city": "丽水",
+        "code": "SUU",
+        "cityTrain": "松阳",
+        "cityTrainPin": "songyang"
+    },
+    {
+        "city": "丽水",
+        "code": "SCU",
+        "cityTrain": "遂昌",
+        "cityTrainPin": "Suichang"
+    },
+    {
+        "city": "台州",
+        "code": "TEU",
+        "cityTrain": "台州",
+        "cityTrainPin": "Taizhou"
+    },
+    {
+        "city": "台州",
+        "code": "TZH",
+        "cityTrain": "台州西",
+        "cityTrainPin": "Taizhouxi"
+    },
+    {
+        "city": "台州",
+        "code": "TIU",
+        "cityTrain": "天台山",
+        "cityTrainPin": "Tiantaishan"
+    },
+    {
+        "city": "杭州",
+        "code": "TLU",
+        "cityTrain": "桐庐",
+        "cityTrainPin": "Tonglu"
+    },
+    {
+        "city": "杭州",
+        "code": "TBU",
+        "cityTrain": "桐庐东",
+        "cityTrainPin": "Tongludong"
+    },
+    {
+        "city": "嘉兴",
+        "code": "TCH",
+        "cityTrain": "桐乡",
+        "cityTrainPin": "Tongxiang"
+    },
+    {
+        "city": "台州",
+        "code": "TMU",
+        "cityTrain": "头门港",
+        "cityTrainPin": "Toumengang"
+    },
+    {
+        "city": "台州",
+        "code": "VHH",
+        "cityTrain": "温岭",
+        "cityTrainPin": "Wenling"
+    },
+    {
+        "city": "温州",
+        "code": "RZH",
+        "cityTrain": "温州",
+        "cityTrainPin": "Wenzhou"
+    },
+    {
+        "city": "温州",
+        "code": "URH",
+        "cityTrain": "温州北",
+        "cityTrainPin": "Wenzhoubei"
+    },
+    {
+        "city": "温州",
+        "code": "VRH",
+        "cityTrain": "温州南",
+        "cityTrainPin": "Wenzhounan"
+    },
+    {
+        "city": "金华",
+        "code": "RYH",
+        "cityTrain": "武义",
+        "cityTrainPin": "Wuyi"
+    },
+    {
+        "city": "金华",
+        "code": "WDH",
+        "cityTrain": "武义北",
+        "cityTrainPin": "Wuyibei"
+    },
+    {
+        "city": "宁波",
+        "code": "XKU",
+        "cityTrain": "溪口",
+        "cityTrainPin": "Xikou"
+    },
+    {
+        "city": "台州",
+        "code": "XJU",
+        "cityTrain": "仙居",
+        "cityTrainPin": "Xianju"
+    },
+    {
+        "city": "台州",
+        "code": "XNU",
+        "cityTrain": "仙居南",
+        "cityTrainPin": "Xianjunan"
+    },
+    {
+        "city": "绍兴",
+        "code": "XBU",
+        "cityTrain": "新昌北",
+        "cityTrainPin": "Xinchangbei"
+    },
+    {
+        "city": "乐清",
+        "code": "YGH",
+        "cityTrain": "雁荡山",
+        "cityTrainPin": "Yandangshan"
+    },
+    {
+        "city": "金华",
+        "code": "YWH",
+        "cityTrain": "义乌",
+        "cityTrainPin": "Yiwu"
+    },
+    {
+        "city": "金华",
+        "code": "RFH",
+        "cityTrain": "永康",
+        "cityTrainPin": "Yongkang"
+    },
+    {
+        "city": "金华",
+        "code": "QUH",
+        "cityTrain": "永康南",
+        "cityTrainPin": "Yongkangnan"
+    },
+    {
+        "city": "宁波",
+        "code": "YYH",
+        "cityTrain": "余姚",
+        "cityTrainPin": "Yuyao"
+    },
+    {
+        "city": "宁波",
+        "code": "CTH",
+        "cityTrain": "余姚北",
+        "cityTrainPin": "Yuyaobei"
+    },
+    {
+        "city": "湖州",
+        "code": "CBH",
+        "cityTrain": "长兴",
+        "cityTrainPin": "Changxing"
+    },
+    {
+        "city": "湖州",
+        "code": "CFH",
+        "cityTrain": "长兴南",
+        "cityTrainPin": "Changxingnan"
+    },
+    {
+        "city": "绍兴",
+        "code": "ZDH",
+        "cityTrain": "诸暨",
+        "cityTrainPin": "Zhuji"
+    },
+    {
+        "city": "宁波",
+        "code": "ZQH",
+        "cityTrain": "庄桥",
+        "cityTrainPin": "Zhuangqiao"
+    }
+]

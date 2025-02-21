@@ -37,7 +37,7 @@ class SVC:
 
     def open(self):
         if self.account is None:
-            with open("doc/account.json") as file:
+            with open("account.json") as file:
                 try:
                     data = json.load(file)
                     account = data['shanbay']['name']
