@@ -172,7 +172,9 @@ class SVC:
             self.logger.info(famous_saying)
             fo = None
             try:
-                fo = open("doc/famous_saying.txt", "a", encoding='utf-8')
+                doc_date = time.strftime('%Y%m', time.localtime(time.time()))
+                file_path = "doc/shanbay/famous_saying_"+doc_date+".txt"
+                fo = open(file_path, "a", encoding='utf-8')
                 write_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
                 fo.write('\n' + famous_saying + '\n' + write_time + '\n')
             except Exception as e:
