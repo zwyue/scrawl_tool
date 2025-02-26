@@ -32,8 +32,7 @@ class SVC:
         self.password=None
 
     def __del__(self):
-        if self.driver is not None:
-            self.driver.close()
+        self.logger.info("......finish......")
 
     def open(self):
         if self.account is None:
@@ -113,26 +112,31 @@ class SVC:
         track = self.get_track(268)
         self.logger.info(f'...... 滑动轨迹 {track} ......')
         self.move_to_gap(block, track)
-        try:
-            success = self.driver_wait.until(
-                EC.text_to_be_present_in_element((By.CLASS_NAME, 'nc-lang-cnt'), '验证通过'))
-        except Exception as e:
-            self.logger.error(e)
+
+        nc_lang_cnt = self.driver.find_elements(By.CLASS_NAME, 'nc-lang-cnt')
+        if nc_lang_cnt:
+            try:
+                return self.driver_wait.until(
+                    EC.text_to_be_present_in_element((By.CLASS_NAME, 'nc-lang-cnt'), '验证通过'))
+            except Exception as e:
+                self.logger.error(e)
+                return self.login()
+        else:
             return self.login()
 
         # 失败后重试
-        if not success:
-            error_msg = self.driver.find_elements(By.CLASS_NAME, 'error-msg')
-            if error_msg:
-                """
-                重试
-                """
-                self.logger.error(error_msg)
-                return True
-            else:
-                return False
-        else:
-            return True
+        # if not success:
+        #     error_msg = self.driver.find_elements(By.CLASS_NAME, 'error-msg')
+        #     if error_msg:
+        #         """
+        #         重试
+        #         """
+        #         self.logger.error(error_msg)
+        #         return True
+        #     else:
+        #         return False
+        # else:
+        #     return True
 
     def set_account(self):
         account_container = self.driver_wait.until(EC.presence_of_element_located((By.ID, 'input-account')))
@@ -189,3 +193,4 @@ if __name__ == '__main__':
     self.set_account()
     self.login()
     self.crack()
+    time.sleep(5)
