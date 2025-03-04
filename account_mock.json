@@ -1,0 +1,17 @@
+{
+  "shanbay": {
+    "name": "",
+    "password": ""
+  },
+  "damai": {
+    "name": "",
+    "password": "",
+    "nickname": ""
+  },
+  "elastic": {
+    "host": "https://localhost:9200",
+    "ca_cert": "D:/projects/env/elasticsearch/data/certs/es01/es01.crt",
+    "name": "elastic",
+    "password": "elastic"
+  }
+}
