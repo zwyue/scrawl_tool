@@ -1,9 +1,11 @@
-import requests
 import json
+
+import requests
 
 """
 中证500、沪深300实时指数
 """
+
 
 def zz500_real_time_info(self, name, code, prefix):
     self.head["Host"] = "www.csindex.com.cn"
@@ -22,7 +24,9 @@ def zz500_real_time_info(self, name, code, prefix):
         "latest": json_data["current"],
         "previous": json_data["closePre"],
         "updatetime": updatetime,
-        "name": name
+        "name": name,
+        "url": [url],
+        "method": "get"
     }
     doc_id = prefix + date
     resp = self.client.index(index=self.index_name, id=doc_id.replace("-", ''), document=doc)

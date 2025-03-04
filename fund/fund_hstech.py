@@ -3,7 +3,7 @@ import json
 import requests
 
 """
-nasdaq100/标普500 实时指数
+恒生科技 实时指数
 """
 
 
@@ -29,7 +29,9 @@ def hstech_real_time_info(self, url):
         "latest": index_value,
         "previous": previous_close,
         "updatetime": time,
-        "name": name
+        "name": name,
+        "url": [url],
+        "method": "get"
     }
 
     doc_id = "hstech_" + date

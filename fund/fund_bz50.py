@@ -1,9 +1,11 @@
-import requests
 import json
+
+import requests
 
 """
 北证50实时指数
 """
+
 
 def bz50_real_time_info(self, url):
     self.head["Host"] = "www.bse.cn"
@@ -21,7 +23,9 @@ def bz50_real_time_info(self, url):
         "latest": last_json["SSZS"],
         "previous": last_json["ZRSP"],
         "updatetime": last_json["GXSJ"],
-        "name": "北证50"
+        "name": "北证50",
+        "url": [url],
+        "method": "get"
     }
     doc_id = "bz50_" + date
     resp = self.client.index(index=self.index_name, id=doc_id.replace("-", ''), document=doc)

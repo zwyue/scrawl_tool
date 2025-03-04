@@ -1,9 +1,12 @@
-import requests
 import json
+
+import requests
 
 """
 富时100实时指数
 """
+
+
 def fs100_real_time_info(self, url):
     self.head["Host"] = "www.lseg.com"
     params = {"id": ["UKX"]}
@@ -21,7 +24,9 @@ def fs100_real_time_info(self, url):
         "latest": json_data["LastValue"],
         "previous": json_data["PrevClose"],
         "updatetime": json_data["TimeStamp"],
-        "name": "富时100"
+        "name": "富时100",
+        "url": [url],
+        "method": "post"
     }
     doc_id = "fs100_" + date.replace(" 00:00:00.0", '')
     resp = self.client.index(index=self.index_name, id=doc_id.replace("-", ''), document=doc)

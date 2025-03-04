@@ -1,10 +1,12 @@
-from datetime import datetime
-import requests
 import json
+from datetime import datetime
+
+import requests
 
 """
 nasdaq100/标普500 实时指数
 """
+
 
 def nasdaq_real_time_info(self, symbol, name, prefix):
     self.head["Host"] = "api.nasdaq.com"
@@ -27,7 +29,9 @@ def nasdaq_real_time_info(self, symbol, name, prefix):
         "latest": json_data["lastSalePrice"].replace(",", ''),
         "previous": json_data["previousClose"].replace(",", ''),
         "updatetime": "160000",
-        "name": name
+        "name": name,
+        "url": [url],
+        "method": "get"
     }
 
     doc_id = prefix + strftime
