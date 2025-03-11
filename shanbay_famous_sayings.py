@@ -7,14 +7,10 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
-from log import init_log
+class Shanbay:
 
-class SVC:
-    # 创建一个logger
-    logger = init_log.logger
-
-    def __init__(self):
-        init_log.init(self)
+    def __init__(self,logger):
+        self.logger = logger
         self.url = 'https://web.shanbay.com/web/account/login/'
         option = webdriver.ChromeOptions()
         # 开发者模式的开关，设置一下，打开浏览器就不会识别为自动化测试工具了
@@ -32,7 +28,7 @@ class SVC:
         self.password=None
 
     def __del__(self):
-        self.logger.info("......finish......")
+        self.logger.info("......scratch shanbay finish......")
 
     def open(self):
         if self.account is None:
@@ -187,10 +183,10 @@ class SVC:
             finally:
                 fo.close()
 
-if __name__ == '__main__':
-    self = SVC()
-    self.open()
-    self.set_account()
-    self.login()
-    self.crack()
-    time.sleep(5)
+# if __name__ == '__main__':
+    # self = Shanbay()
+    # self.open()
+    # self.set_account()
+    # self.login()
+    # self.crack()
+    # time.sleep(5)

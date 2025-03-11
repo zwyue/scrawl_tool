@@ -1,14 +1,11 @@
-from elasticsearch import Elasticsearch
 import json
-from log import init_log
 
-logger = init_log.logger
+from elasticsearch import Elasticsearch
 
-def get_es_client(self):
-    init_log.init(self, locate='../Logs\\')
 
-    with open("../account.json") as file:
-        try:
+def get_es_client(self, locate="../account.json"):
+    try:
+        with open(locate) as file:
             data = json.load(file)
             account = data['elastic']['name']
             password = data['elastic']['password']
@@ -19,11 +16,10 @@ def get_es_client(self):
             self.password = password
             self.cert = cert
             self.host = host
+    except Exception as e:
+        self.logger.info('...... read account.json fail ......')
+        self.logger.info(e)
+    finally:
+        file.close()
 
-        except Exception as e:
-            logger.info('...... read account.json fail ......')
-            logger.info(e)
-        finally:
-            file.close()
-
-    return Elasticsearch(self.host,ca_certs=self.cert,basic_auth=(self.account, self.password))
+    return Elasticsearch(self.host, ca_certs=self.cert, basic_auth=(self.account, self.password))
