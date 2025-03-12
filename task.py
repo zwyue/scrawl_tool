@@ -1,8 +1,12 @@
-import time
-from log import init_log
-import shanbay_famous_sayings
 import sched
+import time
+
+from apscheduler.schedulers.blocking import BlockingScheduler
+
 import fund.scratch_fund
+import shanbay_famous_sayings
+from log import init_log
+
 
 class Task:
     logger = init_log.logger
@@ -13,7 +17,7 @@ class Task:
         init_log.init(self)
 
     def execute_shanby_task(self):
-        Shanbay = shanbay_famous_sayings.Shanbay(logger = self.logger)
+        Shanbay = shanbay_famous_sayings.Shanbay(logger=self.logger)
         Shanbay.open()
         Shanbay.set_account()
         Shanbay.login()
@@ -21,13 +25,12 @@ class Task:
         time.sleep(5)
 
     def execute_fund_task(self):
-        fund.scratch_fund.Fund(logger = self.logger).execute()
+        fund.scratch_fund.Fund(logger=self.logger, locate="account.json").execute()
+
 
 if __name__ == '__main__':
     task = Task()
-    task.execute_shanby_task()
-    task.execute_fund_task()
-    # scheduler = BlockingScheduler()
-    # scheduler.add_job(task.execute_fund_task(), "cron",day_of_week = "0-4", hour = 14, minute = 30)
-    # scheduler.add_job(task.execute_shanby_task(), "cron",hour = 11, minute = 30)
-    # scheduler.start()
+    scheduler = BlockingScheduler()
+    scheduler.add_job(task.execute_fund_task, 'cron', day_of_week='mon-fri', hour='9-15', minute='*/20')
+    scheduler.add_job(task.execute_shanby_task, "cron", hour=10, minute=50)
+    scheduler.start()

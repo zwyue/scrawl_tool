@@ -1,0 +1,5 @@
+services:
+  scheduler:
+    build: .
+    container_name: my-py-scheduler
+    restart: always

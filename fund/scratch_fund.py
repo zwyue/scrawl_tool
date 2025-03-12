@@ -13,10 +13,10 @@ class Fund:
         "X-Requested-With": "XMLHttpRequest",
         "Connection": "keep-alive"
     }
-    def __init__(self,logger):
+    def __init__(self,logger,locate):
         self.logger = logger
         self.sess = requests.session()
-        self.client = init_client.get_es_client(self,locate="account.json")
+        self.client = init_client.get_es_client(self,locate)
         self.index_name = 'last_fund_real_time_price_write'
 
     def __del__(self):
