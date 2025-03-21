@@ -52,7 +52,12 @@ class Fund:
         fund.fund_investing.real_time_info(self, '越南VN30指数', "vni30_", "indices/vn-30")
         fund.fund_investing.real_time_info(self, '东南亚科技指数', "south_east_asia_tech_", "etfs/513730")
         fund.fund_investing_stock.real_time_info(self, '中欧时代先锋股票型发起式证券投资基金A', "001938_",
-                                                 "funds/zhong-ou-modern-pioneer-initiatinga-holdings")
+                                                 "funds/zhong-ou-modern-pioneer-initiatinga-holdings",
+                                                 'pid-1126040-time')
+        fund.fund_investing_stock.real_time_info(self, '大摩健康产业混合A', "002708_",
+                                                 "funds/morgan-stanley-hx-health-industry-holdings", 'pid-1125463-time')
+        fund.fund_investing_stock.real_time_info(self, '景顺长城新兴成长混合型证券投资基金A', "260108_",
+                                                 "funds/igw-emerging-growth-fund-holdings", 'pid-1093007-time')
 
 # if __name__ == '__main__':
 #     Fund().execute()

@@ -4,11 +4,13 @@ import time
 from datetime import datetime
 
 from selenium import webdriver
-from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
+
+from fund.chrome_option import get_options
 
 
 # import shutil
+
 
 def real_time_info(self, name, prefix, category):
     try:
@@ -16,17 +18,7 @@ def real_time_info(self, name, prefix, category):
         # shutil.rmtree("/tmp/unique-chrome-user-data", ignore_errors=True)
 
         # 创建 WebDriver
-        options = Options()
-
-        options.add_argument("--headless")
-        options.add_argument("--no-sandbox")
-        options.add_argument("--disable-dev-shm-usage")
-        options.add_argument("--user-data-dir=/tmp/unique-chrome-user-data")
-        options.add_argument("--incognito")
-        options.add_argument("--enable-logging")
-        options.add_argument("--v=1")
-
-        driver = webdriver.Chrome(options=options)
+        driver = webdriver.Chrome(options=get_options())
 
         url = "https://cn.investing.com/" + category
         # 打开网页

@@ -3,32 +3,23 @@ import time
 from datetime import datetime
 
 from selenium import webdriver
-from selenium.common import NoSuchElementException
-from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
+from fund.chrome_option import get_options
+
 
 # import shutil
 
-def real_time_info(self, name, prefix, category):
+
+def real_time_info(self, name, prefix, category, time_class):
     try:
         # Clean up the user data directory
         # shutil.rmtree("/tmp/unique-chrome-user-data", ignore_errors=True)
 
         # 创建 WebDriver
-        options = Options()
-
-        options.add_argument("--headless")
-        options.add_argument("--no-sandbox")
-        options.add_argument("--disable-dev-shm-usage")
-        options.add_argument("--user-data-dir=/tmp/unique-chrome-user-data")
-        options.add_argument("--incognito")
-        options.add_argument("--enable-logging")
-        options.add_argument("--v=1")
-
-        driver = webdriver.Chrome()
+        driver = webdriver.Chrome(options=get_options())
 
         url = "https://cn.investing.com/" + category
         # 打开网页
@@ -39,7 +30,7 @@ def real_time_info(self, name, prefix, category):
         instrument_price_last = driver.find_element(By.ID, "last_last").text
         price_change = driver.find_elements(By.XPATH, "//span[@dir='ltr']")[1].text
         change_percent = driver.find_elements(By.XPATH, "//span[@dir='ltr']")[2].text
-        trading_time_label = driver.find_elements(By.CLASS_NAME, 'pid-1126040-time')[0].text
+        trading_time_label = driver.find_elements(By.CLASS_NAME, time_class)[0].text
         update_date = datetime.strptime(str(datetime.now().year) + "/" + trading_time_label, "%Y/%d/%m")
         update_date_str = datetime.strftime(update_date, "%Y-%m-%d")
 
@@ -67,13 +58,14 @@ def real_time_info(self, name, prefix, category):
                             mainstocke = {
                                 "name": aTags[0].text,
                                 "weight": tr.find_element(By.CLASS_NAME, "center").text,
-                                "latest": tr.find_elements(By.CLASS_NAME, "right")[0].text,
-                                "balancerate": tr.find_elements(By.CLASS_NAME, "right")[1].text.replace("%", '').replace(
+                                "latest": tr.find_elements(By.CLASS_NAME, "right")[0].text.replace(",", ''),
+                                "balancerate": tr.find_elements(By.CLASS_NAME, "right")[1].text.replace("%",
+                                                                                                        '').replace(
                                     "+", '')
                             }
                             mainstockes.append(mainstocke)
 
-        except NoSuchElementException as e:
+        except Exception as e:
             self.logging.error(e)
 
         driver.close()

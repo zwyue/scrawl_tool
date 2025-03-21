@@ -20,7 +20,7 @@ class Task:
         init_log.init(self, locate=os.environ.get("LOG_PATH"))
 
     def execute_shanby_task(self):
-        Shanbay = shanbay_famous_sayings.Shanbay(logger=self.logger, userDataDir=os.environ.get("CHROME_USER_DATA_DIR"))
+        Shanbay = shanbay_famous_sayings.Shanbay(logger=self.logger, user_data_dir=os.environ.get("CHROME_USER_DATA_DIR"))
         Shanbay.open(file=os.environ.get("ACCOUNT_PATH"))
         Shanbay.set_account()
         Shanbay.login()
@@ -41,11 +41,11 @@ if __name__ == '__main__':
 
     task = Task()
     if env == 'dev':
-        task.execute_shanby_task()
         task.execute_fund_task()
+        task.execute_shanby_task()
 
     if env == 'prod':
         scheduler = BlockingScheduler()
         scheduler.add_job(task.execute_shanby_task, "cron", hour=13, minute=30)
-        scheduler.add_job(task.execute_fund_task, 'cron', day_of_week='mon-fri', hour='11-15', minute='*/20')
+        scheduler.add_job(task.execute_fund_task, 'cron', day_of_week='mon-fri', hour='11-15', minute='*/28')
         scheduler.start()
