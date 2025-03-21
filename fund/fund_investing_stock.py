@@ -1,0 +1,97 @@
+# -*- coding:utf-8 -*-
+import time
+from datetime import datetime
+
+from selenium import webdriver
+from selenium.common import NoSuchElementException
+from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
+from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.support.ui import WebDriverWait
+
+
+# import shutil
+
+def real_time_info(self, name, prefix, category):
+    try:
+        # Clean up the user data directory
+        # shutil.rmtree("/tmp/unique-chrome-user-data", ignore_errors=True)
+
+        # 创建 WebDriver
+        options = Options()
+
+        options.add_argument("--headless")
+        options.add_argument("--no-sandbox")
+        options.add_argument("--disable-dev-shm-usage")
+        options.add_argument("--user-data-dir=/tmp/unique-chrome-user-data")
+        options.add_argument("--incognito")
+        options.add_argument("--enable-logging")
+        options.add_argument("--v=1")
+
+        driver = webdriver.Chrome()
+
+        url = "https://cn.investing.com/" + category
+        # 打开网页
+        driver.get(url)
+
+        time.sleep(10)
+
+        instrument_price_last = driver.find_element(By.ID, "last_last").text
+        price_change = driver.find_elements(By.XPATH, "//span[@dir='ltr']")[1].text
+        change_percent = driver.find_elements(By.XPATH, "//span[@dir='ltr']")[2].text
+        trading_time_label = driver.find_elements(By.CLASS_NAME, 'pid-1126040-time')[0].text
+        update_date = datetime.strptime(str(datetime.now().year) + "/" + trading_time_label, "%Y/%d/%m")
+        update_date_str = datetime.strftime(update_date, "%Y-%m-%d")
+
+        # 获取表格数据
+        # Wait for the XHR request to complete (adjust timeout as needed)
+        WebDriverWait(driver, 10).until(
+            EC.presence_of_element_located((By.CLASS_NAME, "fundsHoldings"))
+        )
+
+        # Locate the outer parent element
+        fundsHoldings = driver.find_element(By.CLASS_NAME, "fundsHoldings")
+        mainstockes = []
+        try:
+            nested_elements = fundsHoldings.find_elements(By.CLASS_NAME, "section")
+            for nested_element in nested_elements:
+                # Locate the element nested even deeper
+                h3 = nested_element.find_element(By.TAG_NAME, "h3")
+                if h3 and h3.text == '主要持仓':
+                    # Extract the text
+                    tbody = nested_element.find_element(By.TAG_NAME, "tbody")
+                    trs = tbody.find_elements(By.TAG_NAME, "tr")
+                    for tr in trs:
+                        aTags = tr.find_elements(By.TAG_NAME, "a")
+                        if len(aTags):
+                            mainstocke = {
+                                "name": aTags[0].text,
+                                "weight": tr.find_element(By.CLASS_NAME, "center").text,
+                                "latest": tr.find_elements(By.CLASS_NAME, "right")[0].text,
+                                "balancerate": tr.find_elements(By.CLASS_NAME, "right")[1].text.replace("%", '').replace(
+                                    "+", '')
+                            }
+                            mainstockes.append(mainstocke)
+
+        except NoSuchElementException as e:
+            self.logging.error(e)
+
+        driver.close()
+        doc = {
+            "date": update_date_str,
+            "balance": price_change.replace("+", ''),
+            "balancerate": change_percent.replace("+", '').replace("(", '').replace(")", '').replace("%", ''),
+            "latest": instrument_price_last.replace(",", ''),
+            # "previous": instrument_price_last.replace(",", ''),
+            "updatetime": "160000",
+            "name": name,
+            "url": [url],
+            "method": "selenium",
+            "mainstock": mainstockes
+        }
+
+        doc_id = prefix + update_date_str
+        resp = self.client.index(index=self.index_name, id=doc_id.replace("-", ''), document=doc)
+        self.logger.info(resp)
+    except Exception as e:
+        self.logger.info(e)

@@ -3,36 +3,47 @@ import time
 
 from selenium import webdriver
 from selenium.webdriver import ActionChains
+from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.support.ui import WebDriverWait
 
+
 class Shanbay:
 
-    def __init__(self,logger):
+    def __init__(self, logger, user_data_dir):
         self.logger = logger
         self.url = 'https://web.shanbay.com/web/account/login/'
-        option = webdriver.ChromeOptions()
+        options = Options()
         # 开发者模式的开关，设置一下，打开浏览器就不会识别为自动化测试工具了
-        option.add_experimental_option('excludeSwitches', ['enable-automation'])
-        option.add_experimental_option('useAutomationExtension', False)
-        option.add_argument("--disable-blink-features")
-        option.add_argument("--disable-blink-features=AutomationControlled")
-        self.driver = webdriver.Chrome(options=option)
+        options.add_argument("--headless")
+        options.add_argument("--no-sandbox")
+        options.add_argument("--disable-dev-shm-usage")
+        options.add_argument("--user-data-dir=" + user_data_dir)
+        options.add_argument("--incognito")
+        options.add_argument("--enable-logging")
+        options.add_argument("--v=1")
+
+        options.add_experimental_option('excludeSwitches', ['enable-automation'])
+        options.add_experimental_option('useAutomationExtension', False)
+        options.add_argument("--disable-blink-features")
+        options.add_argument("--disable-blink-features=AutomationControlled")
+
+        self.driver = webdriver.Chrome(options=options)
         self.driver.maximize_window()
         self.driver_wait = WebDriverWait(self.driver, 20)
         self.location = {}
         self.size = {'width': 260, 'height': 160}
         self.BORDER = 40
-        self.account=None
-        self.password=None
+        self.account = None
+        self.password = None
 
     def __del__(self):
         self.logger.info("......scratch shanbay finish......")
 
-    def open(self):
+    def open(self, file):
         if self.account is None:
-            with open("account.json") as file:
+            with open(file) as file:
                 try:
                     data = json.load(file)
                     account = data['shanbay']['name']
@@ -51,7 +62,6 @@ class Shanbay:
         :return: None
         """
         self.driver.get(self.url)
-
 
     @staticmethod
     def get_track(distance):
@@ -103,7 +113,6 @@ class Shanbay:
         if is_login:
             self.write_txt()
 
-
     def slide_block(self, block):
         track = self.get_track(268)
         self.logger.info(f'...... 滑动轨迹 {track} ......')
@@ -118,6 +127,11 @@ class Shanbay:
                 self.logger.error(e)
                 return self.login()
         else:
+            no_captcha_background_cover = self.driver.find_elements(By.ID, 'no-captcha-background-cover')
+            if no_captcha_background_cover:
+                WebDriverWait(self.driver, 10).until(
+                    EC.invisibility_of_element((By.ID, "no-captcha-background-cover"))
+                )
             return self.login()
 
         # 失败后重试
@@ -145,7 +159,7 @@ class Shanbay:
     def login(self):
         try:
             submit = self.driver_wait.until(EC.element_to_be_clickable((By.ID, 'button-login')))
-            self.logger.info('...... 点击登录 ......'+time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())))
+            self.logger.info('...... 点击登录 ......' + time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time())))
             submit.click()
             time.sleep(2)
             error_msg = self.driver.find_elements(By.CLASS_NAME, 'error-msg')
@@ -173,7 +187,7 @@ class Shanbay:
             fo = None
             try:
                 doc_date = time.strftime('%Y%m', time.localtime(time.time()))
-                file_path = "doc/shanbay/famous_saying_"+doc_date+".txt"
+                file_path = "doc/shanbay/famous_saying_" + doc_date + ".txt"
                 fo = open(file_path, "a", encoding='utf-8')
                 write_time = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time()))
                 fo.write('\n' + famous_saying + '\n' + write_time + '\n')
@@ -184,9 +198,9 @@ class Shanbay:
                 fo.close()
 
 # if __name__ == '__main__':
-    # self = Shanbay()
-    # self.open()
-    # self.set_account()
-    # self.login()
-    # self.crack()
-    # time.sleep(5)
+# self = Shanbay()
+# self.open()
+# self.set_account()
+# self.login()
+# self.crack()
+# time.sleep(5)

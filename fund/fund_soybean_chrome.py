@@ -1,9 +1,7 @@
-from selenium import webdriver
-from selenium.webdriver.chrome.service import Service
-from selenium.webdriver.chrome.options import Options
-from webdriver_manager.chrome import ChromeDriverManager
-import time
 import json
+import time
+
+from selenium import webdriver
 
 # Set up Chrome options
 chrome_options = webdriver.ChromeOptions()
@@ -23,12 +21,14 @@ driver = webdriver.Chrome(options=chrome_options)
 # Enable Network events in the DevTools Protocol
 driver.execute_cdp_cmd("Network.enable", {})
 
+
 # Callback to handle network request events
 def capture_network_request(request):
     # Print network request details
     print(f"Request URL: {request['request']['url']}")
     print(f"Request Method: {request['request']['method']}")
     print(f"Request Headers: {json.dumps(request['request']['headers'], indent=2)}")
+
 
 # Hook up to network events (captures network traffic)
 driver.request_interceptor = capture_network_request

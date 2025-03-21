@@ -12,6 +12,8 @@ pip3 freeze > requirements.txt
 
 ### 修改 account_mock.json 中的数据，并重命名为 account.json
 
+### Dockerfile 中的 chromedriver，chrome 如果能接受编译时间长，就使用 wget ，否则需要提前下载好，放入 工程 doc 目录下
+
 ### 菜单 html
  - 运行 [菜单](scratch_menu.py) 生成 doc/menu.txt
  - 使用 nginx 部署静态资源

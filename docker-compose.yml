@@ -3,3 +3,13 @@ services:
     build: .
     container_name: my-py-scheduler
     restart: always
+    volumes:
+      - D:/projects/env/elasticsearch/data/certs/es01:/app/certs
+      - D:/projects/backup/practice/scrawl_tool/doc/shanbay:/app/doc/shanbay
+      - D:/projects/backup/practice/scrawl_tool/Logs:/app/Logs
+    networks:
+      - elastic
+
+networks:
+  elastic:
+    external: true

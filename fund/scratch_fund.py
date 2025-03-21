@@ -13,10 +13,11 @@ class Fund:
         "X-Requested-With": "XMLHttpRequest",
         "Connection": "keep-alive"
     }
-    def __init__(self,logger,locate):
+
+    def __init__(self, logger):
         self.logger = logger
         self.sess = requests.session()
-        self.client = init_client.get_es_client(self,locate)
+        self.client = init_client.get_es_client(self)
         self.index_name = 'last_fund_real_time_price_write'
 
     def __del__(self):
@@ -28,6 +29,7 @@ class Fund:
         import fund.fund_hstech
         import fund.fund_india
         import fund.fund_investing
+        import fund.fund_investing_stock
         import fund.fund_nasdaq_sp
         import fund.fund_silver
         import fund.fund_zz_hs
@@ -36,7 +38,7 @@ class Fund:
         fund.fund_zz_hs.zz500_real_time_info(self, "中证500", "000905", "zz500_")
         fund.fund_zz_hs.zz500_real_time_info(self, "沪深300", "000300", "hs300_")
         fund.fund_hstech.hstech_real_time_info(self,
-                                          "https://www.hsi.com.hk/data/schi/rt/index-series/hstech/performance.do")
+                                               "https://www.hsi.com.hk/data/schi/rt/index-series/hstech/performance.do")
         fund.fund_ftse.fs100_real_time_info(self, "https://www.lseg.com/api/v1/ftserussel/ticker/getindexes")
         fund.fund_nasdaq_sp.nasdaq_real_time_info(self, "SPX", "标普500", "standardpoor500_")
         fund.fund_nasdaq_sp.nasdaq_real_time_info(self, "NDX", "纳斯达克100", "nasdaq100_")
@@ -49,7 +51,8 @@ class Fund:
         fund.fund_investing.real_time_info(self, '越南胡志明指数', "vn_", "indices/vn")
         fund.fund_investing.real_time_info(self, '越南VN30指数', "vni30_", "indices/vn-30")
         fund.fund_investing.real_time_info(self, '东南亚科技指数', "south_east_asia_tech_", "etfs/513730")
-
+        fund.fund_investing_stock.real_time_info(self, '中欧时代先锋股票型发起式证券投资基金A', "001938_",
+                                                 "funds/zhong-ou-modern-pioneer-initiatinga-holdings")
 
 # if __name__ == '__main__':
 #     Fund().execute()
