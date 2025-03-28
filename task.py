@@ -20,12 +20,12 @@ class Task:
         init_log.init(self, locate=os.environ.get("LOG_PATH"))
 
     def execute_shanby_task(self):
-        Shanbay = shanbay_famous_sayings.Shanbay(logger=self.logger, user_data_dir=os.environ.get("CHROME_USER_DATA_DIR"))
-        Shanbay.open(file=os.environ.get("ACCOUNT_PATH"))
-        Shanbay.set_account()
-        Shanbay.login()
-        Shanbay.crack()
-        time.sleep(5)
+        shanbay = shanbay_famous_sayings.Shanbay(logger=self.logger, user_data_dir=os.environ.get("CHROME_USER_DATA_DIR"))
+        shanbay.open(file=os.environ.get("ACCOUNT_PATH"))
+        shanbay.set_account()
+        shanbay.login()
+        shanbay.crack()
+        shanbay.driver.quit()
 
     def execute_fund_task(self):
         fund.scratch_fund.Fund(logger=self.logger).execute()
@@ -46,6 +46,7 @@ if __name__ == '__main__':
 
     if env == 'prod':
         scheduler = BlockingScheduler()
-        scheduler.add_job(task.execute_shanby_task, "cron", hour=13, minute=30)
-        scheduler.add_job(task.execute_fund_task, 'cron', day_of_week='mon-fri', hour='11-15', minute='*/28')
+        scheduler.add_job(task.execute_shanby_task, "cron", hour=13, minute=10)
+        scheduler.add_job(task.execute_fund_task, 'cron', day_of_week='mon-fri', hour='10-11', minute='*/28')
+        scheduler.add_job(task.execute_fund_task, 'cron', day_of_week='mon-fri', hour='14-15', minute='*/28')
         scheduler.start()

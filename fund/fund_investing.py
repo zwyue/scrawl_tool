@@ -13,13 +13,12 @@ from fund.chrome_option import get_options
 
 
 def real_time_info(self, name, prefix, category):
+    # Clean up the user data directory
+    # shutil.rmtree("/tmp/unique-chrome-user-data", ignore_errors=True)
+
+    # 创建 WebDriver
+    driver = webdriver.Chrome(options=get_options())
     try:
-        # Clean up the user data directory
-        # shutil.rmtree("/tmp/unique-chrome-user-data", ignore_errors=True)
-
-        # 创建 WebDriver
-        driver = webdriver.Chrome(options=get_options())
-
         url = "https://cn.investing.com/" + category
         # 打开网页
         driver.get(url)
@@ -41,7 +40,7 @@ def real_time_info(self, name, prefix, category):
         else:
             update_time = trading_time_label.replace(":", '')
 
-        driver.close()
+        driver.quit()
         doc = {
             "date": date,
             "balance": price_change.replace("+", ''),
@@ -57,5 +56,10 @@ def real_time_info(self, name, prefix, category):
         doc_id = prefix + date
         resp = self.client.index(index=self.index_name, id=doc_id.replace("-", ''), document=doc)
         self.logger.info(resp)
+    except TimeoutError as e:
+        self.logger.info(e)
     except Exception as e:
         self.logger.info(e)
+        if driver.timeouts:
+            self.logger.info("...... close driver ......")
+            driver.quit()

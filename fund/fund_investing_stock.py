@@ -14,14 +14,13 @@ from fund.chrome_option import get_options
 
 
 def real_time_info(self, name, prefix, category, time_class):
+    # Clean up the user data directory
+    # shutil.rmtree("/tmp/unique-chrome-user-data", ignore_errors=True)
+
+    # 创建 WebDriver
+    driver = webdriver.Chrome(options=get_options())
     try:
-        # Clean up the user data directory
-        # shutil.rmtree("/tmp/unique-chrome-user-data", ignore_errors=True)
-
-        # 创建 WebDriver
-        driver = webdriver.Chrome(options=get_options())
-
-        url = "https://cn.investing.com/" + category
+        url = "https://www.investing.com/" + category
         # 打开网页
         driver.get(url)
 
@@ -43,32 +42,35 @@ def real_time_info(self, name, prefix, category, time_class):
         # Locate the outer parent element
         fundsHoldings = driver.find_element(By.CLASS_NAME, "fundsHoldings")
         mainstockes = []
-        try:
-            nested_elements = fundsHoldings.find_elements(By.CLASS_NAME, "section")
-            for nested_element in nested_elements:
-                # Locate the element nested even deeper
-                h3 = nested_element.find_element(By.TAG_NAME, "h3")
-                if h3 and h3.text == '主要持仓':
-                    # Extract the text
-                    tbody = nested_element.find_element(By.TAG_NAME, "tbody")
-                    trs = tbody.find_elements(By.TAG_NAME, "tr")
-                    for tr in trs:
-                        aTags = tr.find_elements(By.TAG_NAME, "a")
-                        if len(aTags):
-                            mainstocke = {
-                                "name": aTags[0].text,
-                                "weight": tr.find_element(By.CLASS_NAME, "center").text,
-                                "latest": tr.find_elements(By.CLASS_NAME, "right")[0].text.replace(",", ''),
-                                "balancerate": tr.find_elements(By.CLASS_NAME, "right")[1].text.replace("%",
-                                                                                                        '').replace(
-                                    "+", '')
-                            }
-                            mainstockes.append(mainstocke)
 
-        except Exception as e:
-            self.logging.error(e)
+        nested_elements = fundsHoldings.find_elements(By.CLASS_NAME, "section")
+        calculation = 0.00
+        for nested_element in nested_elements:
+            # Locate the element nested even deeper
+            h3 = nested_element.find_element(By.TAG_NAME, "h3")
+            # if h3 and h3.text == '主要持仓':
+            if h3 and h3.text == 'Top Holdings':
+                # Extract the text
+                tbody = nested_element.find_element(By.TAG_NAME, "tbody")
+                trs = tbody.find_elements(By.TAG_NAME, "tr")
+                for tr in trs:
+                    aTags = tr.find_elements(By.TAG_NAME, "a")
+                    if len(aTags):
+                        weight = eval(tr.find_element(By.CLASS_NAME, "center").text)
+                        balance_rate = eval(
+                            tr.find_elements(By.CLASS_NAME, "right")[1].text.replace("%", '').replace("+", ''))
+                        mainstocke = {
+                            "name": aTags[0].text,
+                            "weight": weight,
+                            "latest": tr.find_elements(By.CLASS_NAME, "right")[0].text.replace(",", ''),
+                            "balancerate": balance_rate
+                        }
+                        calculation += weight * balance_rate
+                        mainstockes.append(mainstocke)
 
-        driver.close()
+        driver.quit()
+
+        calculation = int(calculation * 100) / 10000
         doc = {
             "date": update_date_str,
             "balance": price_change.replace("+", ''),
@@ -79,7 +81,8 @@ def real_time_info(self, name, prefix, category, time_class):
             "name": name,
             "url": [url],
             "method": "selenium",
-            "mainstock": mainstockes
+            "mainstock": mainstockes,
+            "calculation": calculation
         }
 
         doc_id = prefix + update_date_str
@@ -87,3 +90,4 @@ def real_time_info(self, name, prefix, category, time_class):
         self.logger.info(resp)
     except Exception as e:
         self.logger.info(e)
+        driver.quit()
